@@ -12,20 +12,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --paper: #faf6fc;
-        --paper-deep: #f3e9fa;
-        --ink: #2b1b3f;
-        --ink-soft: #6f5f85;
+        --bg: #fdfcfe;
+        --surface: #ffffff;
+        --ink: #241a33;
+        --muted: #71637f;
         --accent: #7426c9;
-        --accent-deep: #5a1aa0;
-        --pink: #e879c8;
-        --line: #e2d5ef;
-        --line-strong: #2b1b3f;
+        --accent-soft: #f4edfc;
+        --line: #ece5f4;
       }
 
       * {
@@ -46,15 +44,15 @@
 
       body {
         font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
-        background: var(--paper);
+        background: var(--bg);
         color: var(--ink);
-        font-size: 17px;
+        font-size: 16.5px;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
 
       .wrap {
-        max-width: 1060px;
+        max-width: 860px;
         margin: 0 auto;
         padding: 0 24px;
       }
@@ -62,15 +60,33 @@
       :is(a, button):focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 3px;
-        border-radius: 2px;
+        border-radius: 4px;
       }
 
-      /* ---------- Navigasi ---------- */
+      h2 {
+        font-size: 1.45rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        margin-bottom: 8px;
+      }
+
+      .section {
+        padding: 56px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-intro {
+        color: var(--muted);
+        max-width: 54ch;
+        margin-bottom: 32px;
+      }
+
+      /* ---------- Nav ---------- */
       .nav {
         position: sticky;
         top: 0;
         z-index: 40;
-        background: color-mix(in srgb, var(--paper) 90%, transparent);
+        background: rgba(253, 252, 254, 0.92);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--line);
       }
@@ -80,280 +96,185 @@
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        padding: 16px 24px;
-        max-width: 1060px;
+        padding: 14px 24px;
+        max-width: 860px;
         margin: 0 auto;
       }
 
-      .wordmark {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 600;
-        font-size: 1.05rem;
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
         text-decoration: none;
-        letter-spacing: -0.01em;
+        font-weight: 700;
       }
 
-      .wordmark em {
-        font-style: italic;
-        color: var(--accent);
+      .brand img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 26px;
+        gap: 22px;
         list-style: none;
       }
 
-      .nav-links a:not(.nav-cta) {
+      .nav-links a {
         text-decoration: none;
         font-size: 0.92rem;
-        color: var(--ink-soft);
+        font-weight: 500;
+        color: var(--muted);
         transition: color 0.15s;
       }
 
-      .nav-links a:not(.nav-cta):hover {
+      .nav-links a:hover {
         color: var(--ink);
       }
 
-      .nav-cta {
-        font-weight: 600;
-        font-size: 0.92rem;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 1.5px;
-        text-decoration-color: var(--accent);
-      }
-
-      .nav-cta:hover {
+      .nav-links .nav-cta {
         color: var(--accent);
+        font-weight: 600;
       }
 
       /* ---------- Hero ---------- */
       .hero {
-        padding: clamp(56px, 9vw, 100px) 0 clamp(40px, 6vw, 60px);
+        padding: 72px 0 56px;
       }
 
-      .kicker {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-size: 0.8rem;
+      .badge {
+        display: inline-block;
+        font-size: 0.78rem;
         font-weight: 600;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 26px;
-      }
-
-      .kicker::before {
-        content: "";
-        width: 40px;
-        height: 1.5px;
-        background: var(--accent);
-        flex: none;
+        background: var(--accent-soft);
+        border-radius: 999px;
+        padding: 6px 14px;
+        margin-bottom: 22px;
       }
 
       .hero h1 {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(1.9rem, 5vw, 3.4rem);
-        line-height: 1.12;
-        letter-spacing: -0.015em;
-        max-width: 24ch;
+        font-size: clamp(1.8rem, 4.6vw, 2.7rem);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        max-width: 22ch;
+        margin-bottom: 16px;
       }
 
-      .hero h1 em {
-        font-style: italic;
-        font-weight: 600;
-        color: var(--accent);
-      }
-
-      .hero-row {
-        display: grid;
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-        gap: clamp(32px, 6vw, 72px);
-        align-items: start;
-      }
-
-      .hero-lede {
-        color: var(--ink-soft);
+      .hero p {
+        color: var(--muted);
         max-width: 52ch;
-        margin-top: 18px;
+        margin-bottom: 28px;
       }
 
-      .hero-actions {
+      .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 30px;
+        gap: 12px;
       }
 
       .btn {
         display: inline-block;
         font-weight: 600;
-        font-size: 0.98rem;
+        font-size: 0.95rem;
         text-decoration: none;
-        padding: 15px 28px;
-        border: 1.5px solid var(--ink);
-        transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
-          transform 0.15s ease;
+        padding: 13px 24px;
+        border-radius: 10px;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
       }
 
-      .btn-solid {
-        background: var(--ink);
-        color: var(--paper);
-      }
-
-      .btn-solid:hover {
+      .btn-primary {
         background: var(--accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: #5a1aa0;
+      }
+
+      .btn-ghost {
+        border: 1.5px solid var(--line);
+        color: var(--ink);
+        background: var(--surface);
+      }
+
+      .btn-ghost:hover {
         border-color: var(--accent);
-        transform: translateY(-1px);
-      }
-
-      .btn-outline:hover {
-        background: var(--ink);
-        color: var(--paper);
-        transform: translateY(-1px);
-      }
-
-      .hero-note {
-        margin-top: 14px;
-        font-size: 0.85rem;
-        color: var(--ink-soft);
-      }
-
-      .meta {
-        border-top: 1.5px solid var(--line-strong);
-      }
-
-      .meta .meta-cell {
-        padding: 15px 0 13px;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .meta dt {
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink-soft);
-        margin-bottom: 3px;
-      }
-
-      .meta dd {
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.05rem;
-        font-weight: 600;
-      }
-
-      /* ---------- Bagian umum ---------- */
-      .section {
-        padding: clamp(56px, 8vw, 92px) 0;
-      }
-
-      .section-head {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-        gap: clamp(24px, 5vw, 64px);
-        margin-bottom: clamp(32px, 5vw, 48px);
-      }
-
-      .section-head h2 {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(1.6rem, 3.8vw, 2.3rem);
-        line-height: 1.12;
-        letter-spacing: -0.015em;
-      }
-
-      .section-head h2 em {
-        font-style: italic;
-        font-weight: 600;
         color: var(--accent);
       }
 
-      .section-head p {
-        color: var(--ink-soft);
-        align-self: end;
-        max-width: 52ch;
+      .dates {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 32px;
+        margin-top: 34px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .dates div {
+        font-size: 0.9rem;
+      }
+
+      .dates dt {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .dates dd {
+        font-weight: 600;
       }
 
       /* ---------- Subtema ---------- */
-      .subtema-list {
-        list-style: none;
-        border-top: 1.5px solid var(--line-strong);
-        max-width: 720px;
-      }
-
-      .subtema-list li {
+      .chips {
         display: flex;
-        align-items: baseline;
-        gap: 20px;
-        padding: 15px 8px;
-        border-bottom: 1px solid var(--line);
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.15rem;
-        transition: background 0.15s;
+        flex-wrap: wrap;
+        gap: 10px;
       }
 
-      .subtema-list li:hover {
-        background: color-mix(in srgb, var(--accent) 6%, transparent);
-      }
-
-      .subtema-list .idx {
-        font-family: "Instrument Sans", Arial, sans-serif;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--accent);
-        min-width: 28px;
+      .chip {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 9px 18px;
+        font-weight: 500;
+        font-size: 0.95rem;
       }
 
       /* ---------- Biaya ---------- */
-      .biaya-section {
-        background: var(--paper-deep);
-        border-block: 1.5px solid var(--line-strong);
+      .tables {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
       }
 
-      .biaya-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: clamp(28px, 5vw, 56px);
+      .price-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 22px;
+      }
+
+      .price-card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 14px;
       }
 
       .price-table {
         width: 100%;
         border-collapse: collapse;
-        border-top: 1.5px solid var(--line-strong);
-      }
-
-      .price-table caption {
-        text-align: left;
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding-bottom: 12px;
-      }
-
-      .price-table th {
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--ink-soft);
-        text-align: right;
-        padding: 10px 4px;
-        border-bottom: 1px solid var(--line-strong);
-      }
-
-      .price-table th:first-child {
-        text-align: left;
       }
 
       .price-table td {
-        padding: 13px 4px;
-        border-bottom: 1px solid var(--line);
-        font-size: 0.95rem;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+        font-size: 0.94rem;
       }
 
       .price-table td:not(:first-child) {
@@ -362,221 +283,166 @@
         white-space: nowrap;
       }
 
-      .price-table td:first-child {
-        font-weight: 500;
-      }
-
-      .price-table .early td {
+      .price-table .eb {
         color: var(--accent);
         font-weight: 600;
       }
 
-      .biaya-note {
-        margin-top: 26px;
+      .fee-note {
+        margin-top: 20px;
         font-size: 0.9rem;
-        color: var(--ink-soft);
-      }
-
-      .biaya-note strong {
-        color: var(--accent);
+        color: var(--muted);
       }
 
       /* ---------- Alur ---------- */
-      .timeline {
+      .steps {
         list-style: none;
-        border-left: 1.5px solid var(--line-strong);
-        margin-left: 8px;
-        max-width: 680px;
+        counter-reset: step;
       }
 
-      .timeline li {
-        position: relative;
-        padding: 0 0 30px 28px;
+      .steps li {
+        counter-increment: step;
+        display: flex;
+        gap: 18px;
+        padding: 18px 0;
+        border-top: 1px solid var(--line);
       }
 
-      .timeline li:last-child {
-        padding-bottom: 0;
-      }
-
-      .timeline li::before {
-        content: "";
-        position: absolute;
-        left: -6.75px;
-        top: 8px;
-        width: 12px;
-        height: 12px;
+      .steps li::before {
+        content: counter(step);
+        flex: none;
+        width: 32px;
+        height: 32px;
         border-radius: 50%;
-        background: var(--accent);
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      .timeline time {
+      .steps time {
         display: block;
         font-size: 0.8rem;
         font-weight: 600;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 3px;
       }
 
-      .timeline strong {
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.12rem;
-        font-weight: 600;
+      .steps strong {
+        display: block;
+        margin: 2px 0;
       }
 
-      .timeline p {
-        color: var(--ink-soft);
+      .steps p {
+        color: var(--muted);
         font-size: 0.93rem;
-        margin-top: 2px;
         max-width: 56ch;
       }
 
       /* ---------- Dokumen ---------- */
       .doc-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 14px;
+        list-style: none;
       }
 
-      .doc-link {
-        display: block;
+      .doc-list a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--surface);
         text-decoration: none;
-        border: 1.5px solid var(--ink);
-        padding: 22px 20px;
-        transition: background 0.15s, color 0.15s, transform 0.15s;
+        margin-bottom: 10px;
+        transition: border-color 0.15s;
       }
 
-      .doc-link:hover {
-        background: var(--ink);
-        color: var(--paper);
-        transform: translateY(-2px);
+      .doc-list a:hover {
+        border-color: var(--accent);
       }
 
-      .doc-link .tag {
+      .doc-list .tag {
         font-size: 0.72rem;
         font-weight: 600;
-        letter-spacing: 0.14em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: var(--accent);
-      }
-
-      .doc-link:hover .tag {
-        color: var(--pink);
-      }
-
-      .doc-link strong {
         display: block;
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.12rem;
+      }
+
+      .doc-list strong {
         font-weight: 600;
-        margin-top: 6px;
-        line-height: 1.3;
       }
 
-      .doc-link span {
-        font-size: 0.85rem;
-        color: var(--ink-soft);
-      }
-
-      .doc-link:hover span {
-        color: #c3aed3;
+      .doc-list .arrow {
+        color: var(--muted);
+        flex: none;
       }
 
       /* ---------- Pembayaran ---------- */
       .pay-card {
-        border: 1.5px solid var(--line-strong);
-        background: var(--paper-deep);
-        padding: clamp(24px, 4vw, 40px);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 22px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 24px;
-        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 18px;
       }
 
       .pay-card dt {
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--ink-soft);
-        margin-bottom: 4px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 2px;
       }
 
       .pay-card dd {
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 1.05rem;
       }
 
-      .pay-card .rek {
-        font-size: 1.35rem;
-        letter-spacing: 0.04em;
-      }
-
-      /* ---------- CTA ---------- */
-      .cta {
-        background: var(--ink);
-        color: var(--paper);
-        padding: clamp(56px, 9vw, 92px) 0;
-      }
-
-      .cta-inner {
+      /* ---------- Daftar ---------- */
+      .register {
         display: grid;
-        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-        gap: clamp(32px, 6vw, 72px);
-        align-items: center;
+        gap: 12px;
       }
 
-      .cta h2 {
-        font-family: "Fraunces", Georgia, serif;
-        font-weight: 400;
-        font-size: clamp(1.9rem, 4.6vw, 3rem);
-        line-height: 1.1;
+      .register .btn {
+        width: 100%;
+        text-align: center;
       }
 
-      .cta h2 em {
-        font-style: italic;
-        font-weight: 600;
-        color: var(--pink);
-      }
-
-      .cta-side p {
-        color: #c3aed3;
-        margin-bottom: 22px;
-      }
-
-      .btn-inverse {
-        background: var(--paper);
-        border-color: var(--paper);
-        color: var(--ink);
-      }
-
-      .btn-inverse:hover {
-        background: var(--pink);
-        border-color: var(--pink);
+      .register-note {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-top: 6px;
       }
 
       /* ---------- Footer ---------- */
       footer {
-        padding: 34px 0;
+        border-top: 1px solid var(--line);
+        padding: 30px 0;
         font-size: 0.88rem;
-        color: var(--ink-soft);
+        color: var(--muted);
       }
 
       .footer-inner {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 14px;
+        gap: 12px;
       }
 
       .footer-inner a {
         color: var(--ink);
         font-weight: 600;
-        text-decoration: underline;
-        text-underline-offset: 3px;
-        text-decoration-color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1.5px solid var(--accent);
       }
 
       .footer-inner a:hover {
@@ -584,25 +450,13 @@
       }
 
       /* ---------- Responsif ---------- */
-      @media (max-width: 860px) {
-        .hero-row,
-        .section-head,
-        .cta-inner {
-          grid-template-columns: 1fr;
-        }
-
-        .section-head p {
-          align-self: start;
-        }
-
-        .hero h1 {
-          max-width: none;
-        }
-      }
-
       @media (max-width: 640px) {
         .nav-links li.hide-mobile {
           display: none;
+        }
+
+        .section {
+          padding: 44px 0;
         }
       }
     </style>
@@ -616,7 +470,6 @@
          ============================================================ -->
     <script>
       const TAUTAN = {
-        peserta: "https://bit.ly/PendaftaranPesertaSNBI2026",
         pemakalah: "https://bit.ly/PendaftaranPemakalahSNBI2026",
         alurPemakalah:
           "https://docs.google.com/document/d/1Uq41bFn4YhzlN6PFqAjHJjEZRefPPPvq/edit?usp=sharing",
@@ -640,8 +493,7 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("[data-link]").forEach((el) => {
-          const key = el.getAttribute("data-link");
-          const url = TAUTAN[key];
+          const url = TAUTAN[el.getAttribute("data-link")];
           if (url) {
             el.setAttribute("href", url);
             el.setAttribute("target", "_blank");
@@ -653,247 +505,231 @@
 
     <nav class="nav">
       <div class="nav-inner">
-        <a class="wordmark" href="#">SNBI <em>XVIII 2026</em></a>
+        <a class="brand" href="#">
+          <img src="favicon.png" alt="Lambang Universitas Udayana" />
+          SNBI XVIII 2026
+        </a>
         <ul class="nav-links">
           <li class="hide-mobile"><a href="#subtema">Subtema</a></li>
           <li class="hide-mobile"><a href="#biaya">Biaya</a></li>
           <li class="hide-mobile"><a href="#alur">Alur</a></li>
-          <li><a class="nav-cta" href="#daftar">Daftar ↓</a></li>
+          <li><a class="nav-cta" href="#daftar">Daftar</a></li>
         </ul>
       </div>
     </nav>
 
     <header class="hero">
       <div class="wrap">
-        <p class="kicker">Seminar Nasional Bahasa Ibu · SNBI XVIII 2026</p>
-        <div class="hero-row">
-          <div>
-            <h1>
-              Bahasa Ibu sebagai <em>Pilar Identitas Budaya</em>: Tantangan dan
-              Peluang di Era Modernisasi Digital
-            </h1>
-            <p class="hero-lede">
-              Pemakalah diwajibkan mengirimkan abstrak sesuai tema dan subtema
-              SNBI XVIII. Pendaftaran terbuka untuk peserta dan pemakalah,
-              mahasiswa maupun umum, online maupun offline.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-solid" href="#daftar">Daftar Peserta ↓</a>
-              <a class="btn btn-outline" data-link="pemakalah">Daftar Pemakalah ↗</a>
-            </div>
-            <p class="hero-note">
-              Early bird 24 Nov – 24 Des 2025 · Pengiriman abstrak s.d. 20 Jan 2026
-            </p>
-          </div>
-          <dl class="meta" aria-label="Informasi penting">
-            <div class="meta-cell">
-              <dt>Early Bird</dt>
-              <dd>24 Nov – 24 Des 2025</dd>
-            </div>
-            <div class="meta-cell">
-              <dt>Kirim Abstrak</dt>
-              <dd>24 Nov 2025 – 20 Jan 2026</dd>
-            </div>
-            <div class="meta-cell">
-              <dt>Pengumuman Abstrak</dt>
-              <dd>30 Januari 2026</dd>
-            </div>
-            <div class="meta-cell">
-              <dt>Kirim Full Paper</dt>
-              <dd>31 Jan – 15 Feb 2026</dd>
-            </div>
-          </dl>
+        <span class="badge">Seminar Nasional Bahasa Ibu · SNBI XVIII 2026</span>
+        <h1>
+          Bahasa Ibu sebagai Pilar Identitas Budaya: Tantangan dan Peluang di
+          Era Modernisasi Digital
+        </h1>
+        <p>
+          Pendaftaran terbuka untuk peserta dan pemakalah — mahasiswa maupun
+          umum, online maupun offline. Pemakalah mengirimkan abstrak sesuai
+          tema dan subtema SNBI XVIII.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#daftar">Daftar Sekarang</a>
+          <a class="btn btn-ghost" data-link="pemakalah">Daftar Pemakalah ↗</a>
         </div>
+        <dl class="dates">
+          <div>
+            <dt>Early bird</dt>
+            <dd>24 Nov – 24 Des 2025</dd>
+          </div>
+          <div>
+            <dt>Kirim abstrak</dt>
+            <dd>s.d. 20 Jan 2026</dd>
+          </div>
+          <div>
+            <dt>Pengumuman abstrak</dt>
+            <dd>30 Jan 2026</dd>
+          </div>
+          <div>
+            <dt>Full paper</dt>
+            <dd>31 Jan – 15 Feb 2026</dd>
+          </div>
+        </dl>
       </div>
     </header>
 
     <section class="section" id="subtema">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Subtema <em>SNBI XVIII</em></h2>
-          <p>
-            Abstrak dapat dikirimkan mulai 24 November 2025 hingga 20 Januari
-            2026, dan akan diulas oleh reviewer.
-          </p>
+        <h2>Subtema</h2>
+        <p class="section-intro">
+          Abstrak dikirim sesuai salah satu subtema berikut dan akan diulas
+          oleh reviewer.
+        </p>
+        <div class="chips">
+          <span class="chip">Mikrolinguistik</span>
+          <span class="chip">Makrolinguistik</span>
+          <span class="chip">Revitalisasi Bahasa</span>
+          <span class="chip">Pemertahanan dan Ketahanan Bahasa</span>
+          <span class="chip">Bahasa Ibu di Era Modernisasi Digital</span>
+          <span class="chip">Wacana dan Sastra Digital</span>
         </div>
-        <ol class="subtema-list">
-          <li><span class="idx">01</span> Mikrolinguistik</li>
-          <li><span class="idx">02</span> Makrolinguistik</li>
-          <li><span class="idx">03</span> Revitalisasi Bahasa</li>
-          <li><span class="idx">04</span> Pemertahanan dan Ketahanan Bahasa</li>
-          <li><span class="idx">05</span> Bahasa Ibu di Era Modernisasi Digital</li>
-          <li><span class="idx">06</span> Wacana dan Sastra Digital</li>
-        </ol>
       </div>
     </section>
 
-    <section class="section biaya-section" id="biaya">
+    <section class="section" id="biaya">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Rincian <em>biaya</em></h2>
-          <p>
-            Seluruh rincian biaya dihitung per orang. Manfaatkan masa early
-            bird 24 November – 24 Desember 2025.
-          </p>
+        <h2>Rincian Biaya</h2>
+        <p class="section-intro">
+          Seluruh biaya dihitung per orang. Early bird berlaku 24 November –
+          24 Desember 2025.
+        </p>
+        <div class="tables">
+          <div class="price-card">
+            <h3>Peserta</h3>
+            <table class="price-table">
+              <tbody>
+                <tr>
+                  <td>Mahasiswa — Online</td>
+                  <td>Rp70.000</td>
+                  <td class="eb">Rp50.000</td>
+                </tr>
+                <tr>
+                  <td>Mahasiswa — Offline</td>
+                  <td>Rp95.000</td>
+                  <td class="eb">Rp75.000</td>
+                </tr>
+                <tr>
+                  <td>Umum — Online</td>
+                  <td>Rp175.000</td>
+                  <td class="eb">Rp150.000</td>
+                </tr>
+                <tr>
+                  <td>Umum — Offline</td>
+                  <td>Rp200.000</td>
+                  <td class="eb">Rp175.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="price-card">
+            <h3>Pemakalah</h3>
+            <table class="price-table">
+              <tbody>
+                <tr>
+                  <td>Pemakalah Mahasiswa — Online</td>
+                  <td>Rp175.000</td>
+                </tr>
+                <tr>
+                  <td>Pemakalah Mahasiswa — Offline</td>
+                  <td>Rp200.000</td>
+                </tr>
+                <tr>
+                  <td>Pemakalah Umum — Online</td>
+                  <td>Rp225.000</td>
+                </tr>
+                <tr>
+                  <td>Pemakalah Umum — Offline</td>
+                  <td>Rp250.000</td>
+                </tr>
+                <tr>
+                  <td>Ekstra paper (per orang)</td>
+                  <td class="eb">+Rp50.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="biaya-grid">
-          <table class="price-table">
-            <caption>Peserta</caption>
-            <thead>
-              <tr>
-                <th scope="col">Kategori</th>
-                <th scope="col">Normal</th>
-                <th scope="col">Early Bird</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mahasiswa — Online</td>
-                <td>Rp70.000</td>
-                <td>Rp50.000</td>
-              </tr>
-              <tr>
-                <td>Mahasiswa — Offline</td>
-                <td>Rp95.000</td>
-                <td>Rp75.000</td>
-              </tr>
-              <tr>
-                <td>Umum — Online</td>
-                <td>Rp175.000</td>
-                <td>Rp150.000</td>
-              </tr>
-              <tr>
-                <td>Umum — Offline</td>
-                <td>Rp200.000</td>
-                <td>Rp175.000</td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="price-table">
-            <caption>Pemakalah</caption>
-            <thead>
-              <tr>
-                <th scope="col">Kategori</th>
-                <th scope="col">Biaya</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Pemakalah Mahasiswa — Online</td>
-                <td>Rp175.000</td>
-              </tr>
-              <tr>
-                <td>Pemakalah Mahasiswa — Offline</td>
-                <td>Rp200.000</td>
-              </tr>
-              <tr>
-                <td>Pemakalah Umum — Online</td>
-                <td>Rp225.000</td>
-              </tr>
-              <tr>
-                <td>Pemakalah Umum — Offline</td>
-                <td>Rp250.000</td>
-              </tr>
-              <tr class="early">
-                <td>Ekstra paper (per orang)</td>
-                <td>+Rp50.000</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="biaya-note">
-          <strong>Early bird: 24 November – 24 Desember 2025.</strong> Semua
-          rincian biaya adalah biaya per orang.
+        <p class="fee-note">
+          Kolom ungu pada tabel peserta adalah harga early bird. Semua rincian
+          biaya adalah biaya per orang.
         </p>
       </div>
     </section>
 
     <section class="section" id="alur">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Alur <em>pendaftaran</em></h2>
-          <p>
-            Peserta yang dinyatakan lulus abstrak diwajibkan melakukan
-            pembayaran dan mengunggah bukti pembayaran melalui tautan yang
-            dikirim via email.
-          </p>
-        </div>
-        <ol class="timeline">
+        <h2>Alur Pendaftaran</h2>
+        <p class="section-intro">
+          Informasi kelulusan abstrak disampaikan melalui email yang telah
+          didaftarkan.
+        </p>
+        <ol class="steps">
           <li>
-            <time>24 Nov 2025 – 20 Jan 2026</time>
-            <strong>Pengiriman abstrak</strong>
-            <p>
-              Abstrak dikirim sesuai tema &amp; subtema SNBI XVIII menggunakan
-              template yang tersedia, lalu diulas oleh reviewer.
-            </p>
+            <div>
+              <time>24 Nov 2025 – 20 Jan 2026</time>
+              <strong>Kirim abstrak</strong>
+              <p>
+                Gunakan template abstrak, sesuai tema &amp; subtema SNBI
+                XVIII. Abstrak akan diulas oleh reviewer.
+              </p>
+            </div>
           </li>
           <li>
-            <time>30 Januari 2026</time>
-            <strong>Pengumuman kelulusan abstrak</strong>
-            <p>
-              Informasi kelulusan disampaikan melalui email yang telah
-              didaftarkan.
-            </p>
+            <div>
+              <time>30 Januari 2026</time>
+              <strong>Pengumuman kelulusan abstrak</strong>
+              <p>Hasil ulasan dikirim ke email pendaftar.</p>
+            </div>
           </li>
           <li>
-            <time>Setelah kelulusan</time>
-            <strong>Pembayaran &amp; unggah bukti</strong>
-            <p>
-              Pembayaran ke rekening BNI 1890358156 a.n. I Gusti Agung Ayu
-              Laksmi Dewi, lalu unggah bukti pembayaran melalui tautan yang
-              dikirim via email.
-            </p>
+            <div>
+              <time>Setelah kelulusan</time>
+              <strong>Pembayaran &amp; unggah bukti</strong>
+              <p>
+                Bayar ke rekening BNI lalu unggah bukti pembayaran melalui
+                tautan yang dikirim via email.
+              </p>
+            </div>
           </li>
           <li>
-            <time>31 Jan – 15 Feb 2026</time>
-            <strong>Pengumpulan full paper</strong>
-            <p>
-              Peserta yang lulus mengumpulkan full paper menggunakan template
-              yang tersedia.
-            </p>
+            <div>
+              <time>31 Jan – 15 Feb 2026</time>
+              <strong>Kirim full paper</strong>
+              <p>Gunakan template full paper yang tersedia.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section" id="dokumen" style="padding-top: 0">
+    <section class="section" id="dokumen">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Dokumen <em>&amp; tautan</em></h2>
-          <p>
-            Informasi lebih lanjut dapat diakses melalui tautan di bawah ini.
-          </p>
-        </div>
-        <div class="doc-list">
-          <a class="doc-link" data-link="alurPemakalah">
-            <span class="tag">Google Docs</span>
-            <strong>Alur Pendaftaran Pemakalah SNBI XVIII 2026</strong>
-            <span>Baca dokumen ↗</span>
-          </a>
-          <a class="doc-link" data-link="templateAbstrak">
-            <span class="tag">Google Docs</span>
-            <strong>Template Abstrak SNBI XVIII 2026</strong>
-            <span>Buka template ↗</span>
-          </a>
-          <a class="doc-link" data-link="templateFullPaper">
-            <span class="tag">Google Docs</span>
-            <strong>Template Full Paper SNBI XVIII 2026</strong>
-            <span>Buka template ↗</span>
-          </a>
-          <a class="doc-link" data-link="konfirmasiPembayaran">
-            <span class="tag">Google Form</span>
-            <strong>Formulir Konfirmasi Pembayaran Pemakalah</strong>
-            <span>Isi formulir ↗</span>
-          </a>
-        </div>
+        <h2>Dokumen &amp; Tautan</h2>
+        <p class="section-intro">
+          Informasi lebih lanjut dapat diakses melalui tautan di bawah ini.
+        </p>
+        <ul class="doc-list">
+          <li>
+            <a data-link="alurPemakalah">
+              <span><span class="tag">Google Docs</span><strong>Alur Pendaftaran Pemakalah SNBI XVIII 2026</strong></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a data-link="templateAbstrak">
+              <span><span class="tag">Google Docs</span><strong>Template Abstrak SNBI XVIII 2026</strong></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a data-link="templateFullPaper">
+              <span><span class="tag">Google Docs</span><strong>Template Full Paper SNBI XVIII 2026</strong></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+          <li>
+            <a data-link="konfirmasiPembayaran">
+              <span><span class="tag">Google Form</span><strong>Formulir Konfirmasi Pembayaran</strong></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section class="section" id="pembayaran" style="padding-top: 0">
+    <section class="section" id="pembayaran">
       <div class="wrap">
-        <div class="section-head" style="margin-bottom: 28px">
-          <h2>Rekening <em>pembayaran</em></h2>
-        </div>
+        <h2>Rekening Pembayaran</h2>
+        <p class="section-intro">
+          Untuk peserta yang dinyatakan lulus abstrak.
+        </p>
         <dl class="pay-card">
           <div>
             <dt>Bank</dt>
@@ -901,7 +737,7 @@
           </div>
           <div>
             <dt>Nomor rekening</dt>
-            <dd class="rek">1890358156</dd>
+            <dd>1890358156</dd>
           </div>
           <div>
             <dt>Atas nama</dt>
@@ -911,22 +747,23 @@
       </div>
     </section>
 
-    <section class="cta" id="daftar">
-      <div class="wrap cta-inner">
-        <h2>Mendaftar sebagai <em>peserta</em> atau <em>pemakalah</em>?</h2>
-        <div class="cta-side">
-          <p>
-            Peserta memilih formulir sesuai kategori. Pemakalah cukup satu
-            formulir.
-          </p>
-          <div class="hero-actions" style="margin-top: 0">
-            <a class="btn btn-inverse" data-link="pesertaMahasiswaOnline">Mahasiswa — Online ↗</a>
-            <a class="btn btn-inverse" data-link="pesertaMahasiswaOffline">Mahasiswa — Offline ↗</a>
-            <a class="btn btn-inverse" data-link="pesertaUmumOnline">Umum — Online ↗</a>
-            <a class="btn btn-inverse" data-link="pesertaUmumOffline">Umum — Offline ↗</a>
-            <a class="btn btn-inverse" data-link="pemakalah" style="margin-top: 10px">Daftar Pemakalah ↗</a>
-          </div>
+    <section class="section" id="daftar">
+      <div class="wrap">
+        <h2>Pendaftaran</h2>
+        <p class="section-intro">
+          Peserta memilih formulir sesuai kategori. Pemakalah cukup satu
+          formulir.
+        </p>
+        <div class="register">
+          <a class="btn btn-primary" data-link="pesertaMahasiswaOnline">Peserta Mahasiswa — Online ↗</a>
+          <a class="btn btn-primary" data-link="pesertaMahasiswaOffline">Peserta Mahasiswa — Offline ↗</a>
+          <a class="btn btn-primary" data-link="pesertaUmumOnline">Peserta Umum — Online ↗</a>
+          <a class="btn btn-primary" data-link="pesertaUmumOffline">Peserta Umum — Offline ↗</a>
+          <a class="btn btn-ghost" data-link="pemakalah">Pemakalah (semua kategori) ↗</a>
         </div>
+        <p class="register-note">
+          Semua formulir dibuka di tab baru (Google Form).
+        </p>
       </div>
     </section>
 
@@ -934,8 +771,7 @@
       <div class="wrap footer-inner">
         <span>&copy; 2026 Seminar Nasional Bahasa Ibu (SNBI) XVIII</span>
         <span>
-          Kontak:
-          <a data-link="email">snbi@unud.ac.id</a> ·
+          <a data-link="email">snbi@unud.ac.id</a> &nbsp;·&nbsp;
           <a data-link="wa">WhatsApp</a>
         </span>
       </div>
