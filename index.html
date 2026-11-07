@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Seminar Nasional Bahasa Ibu — memperingati Hari Bahasa Ibu Sedunia, 21 Februari 2026. Daftar gratis."
+      content="Seminar Nasional Bahasa Ibu (SNBI) XVIII 2026 — Pendaftaran peserta & pemakalah."
     />
-    <title>Seminar Bahasa Ibu — 21 Februari 2026</title>
+    <title>SNBI XVIII 2026 — Seminar Nasional Bahasa Ibu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,14 +16,15 @@
     />
     <style>
       :root {
-        --paper: #f6f1e7;
-        --paper-deep: #efe7d8;
-        --ink: #201a14;
-        --ink-soft: #6d6153;
-        --red: #a63817;
-        --red-deep: #7d290e;
-        --line: #d8cdba;
-        --line-strong: #201a14;
+        --paper: #faf6fc;
+        --paper-deep: #f3e9fa;
+        --ink: #2b1b3f;
+        --ink-soft: #6f5f85;
+        --accent: #7426c9;
+        --accent-deep: #5a1aa0;
+        --pink: #e879c8;
+        --line: #e2d5ef;
+        --line-strong: #2b1b3f;
       }
 
       * {
@@ -40,9 +41,6 @@
         html {
           scroll-behavior: auto;
         }
-        .marquee-track {
-          animation: none !important;
-        }
       }
 
       body {
@@ -54,14 +52,6 @@
         -webkit-font-smoothing: antialiased;
       }
 
-      .serif {
-        font-family: "Fraunces", Georgia, "Times New Roman", serif;
-      }
-
-      a {
-        color: inherit;
-      }
-
       .wrap {
         max-width: 1060px;
         margin: 0 auto;
@@ -69,7 +59,7 @@
       }
 
       :is(a, button):focus-visible {
-        outline: 2px solid var(--red);
+        outline: 2px solid var(--accent);
         outline-offset: 3px;
         border-radius: 2px;
       }
@@ -104,7 +94,7 @@
 
       .wordmark em {
         font-style: italic;
-        color: var(--red);
+        color: var(--accent);
       }
 
       .nav-links {
@@ -131,16 +121,16 @@
         text-decoration: underline;
         text-underline-offset: 4px;
         text-decoration-thickness: 1.5px;
-        text-decoration-color: var(--red);
+        text-decoration-color: var(--accent);
       }
 
       .nav-cta:hover {
-        color: var(--red);
+        color: var(--accent);
       }
 
       /* ---------- Hero ---------- */
       .hero {
-        padding: clamp(56px, 10vw, 110px) 0 clamp(40px, 6vw, 64px);
+        padding: clamp(56px, 9vw, 100px) 0 clamp(40px, 6vw, 60px);
       }
 
       .kicker {
@@ -151,63 +141,62 @@
         font-weight: 600;
         letter-spacing: 0.18em;
         text-transform: uppercase;
-        color: var(--red);
-        margin-bottom: 28px;
+        color: var(--accent);
+        margin-bottom: 26px;
       }
 
       .kicker::before {
         content: "";
         width: 40px;
         height: 1.5px;
-        background: var(--red);
+        background: var(--accent);
         flex: none;
       }
 
       .hero h1 {
         font-family: "Fraunces", Georgia, serif;
         font-weight: 400;
-        font-size: clamp(2.5rem, 7.5vw, 4.8rem);
-        line-height: 1.04;
-        letter-spacing: -0.02em;
-        max-width: 15ch;
+        font-size: clamp(1.9rem, 5vw, 3.4rem);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        max-width: 24ch;
       }
 
       .hero h1 em {
         font-style: italic;
         font-weight: 600;
-        color: var(--red);
+        color: var(--accent);
       }
 
       .hero-row {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
         gap: clamp(32px, 6vw, 72px);
-        align-items: end;
+        align-items: start;
       }
 
       .hero-lede {
         color: var(--ink-soft);
-        max-width: 44ch;
-        font-size: 1.02rem;
+        max-width: 52ch;
+        margin-top: 18px;
       }
 
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        gap: 20px;
+        gap: 14px;
         margin-top: 30px;
       }
 
       .btn {
         display: inline-block;
-        font-family: "Instrument Sans", Arial, sans-serif;
         font-weight: 600;
-        font-size: 1rem;
+        font-size: 0.98rem;
         text-decoration: none;
-        padding: 15px 32px;
+        padding: 15px 28px;
         border: 1.5px solid var(--ink);
-        transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+          transform 0.15s ease;
       }
 
       .btn-solid {
@@ -216,37 +205,29 @@
       }
 
       .btn-solid:hover {
-        background: var(--red);
-        border-color: var(--red);
+        background: var(--accent);
+        border-color: var(--accent);
         transform: translateY(-1px);
       }
 
-      .link-arrow {
-        font-weight: 600;
-        font-size: 0.98rem;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-thickness: 1.5px;
-        text-decoration-color: var(--line-strong);
+      .btn-outline:hover {
+        background: var(--ink);
+        color: var(--paper);
+        transform: translateY(-1px);
       }
 
-      .link-arrow:hover {
-        text-decoration-color: var(--red);
-        color: var(--red);
+      .hero-note {
+        margin-top: 14px;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
       }
 
-      /* meta tabel kecil di kanan bawah hero */
       .meta {
         border-top: 1.5px solid var(--line-strong);
       }
 
-      .meta dl {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
       .meta .meta-cell {
-        padding: 16px 0 14px;
+        padding: 15px 0 13px;
         border-bottom: 1px solid var(--line);
       }
 
@@ -261,75 +242,34 @@
 
       .meta dd {
         font-family: "Fraunces", Georgia, serif;
-        font-size: 1.08rem;
+        font-size: 1.05rem;
         font-weight: 600;
-      }
-
-      /* ---------- Marquee bahasa daerah ---------- */
-      .marquee {
-        border-block: 1.5px solid var(--line-strong);
-        background: var(--paper-deep);
-        overflow: hidden;
-        padding: 14px 0;
-      }
-
-      .marquee-track {
-        display: flex;
-        gap: 0;
-        width: max-content;
-        animation: marquee 40s linear infinite;
-      }
-
-      .marquee:hover .marquee-track {
-        animation-play-state: paused;
-      }
-
-      .marquee span {
-        font-family: "Fraunces", Georgia, serif;
-        font-style: italic;
-        font-size: 1.1rem;
-        white-space: nowrap;
-        padding: 0 18px;
-        position: relative;
-      }
-
-      .marquee span::after {
-        content: "·";
-        position: absolute;
-        right: -7px;
-        color: var(--red);
-        font-style: normal;
-      }
-
-      @keyframes marquee {
-        to {
-          transform: translateX(-50%);
-        }
       }
 
       /* ---------- Bagian umum ---------- */
       .section {
-        padding: clamp(64px, 9vw, 104px) 0;
+        padding: clamp(56px, 8vw, 92px) 0;
       }
 
       .section-head {
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
         gap: clamp(24px, 5vw, 64px);
-        margin-bottom: clamp(36px, 6vw, 56px);
+        margin-bottom: clamp(32px, 5vw, 48px);
       }
 
       .section-head h2 {
         font-family: "Fraunces", Georgia, serif;
         font-weight: 400;
-        font-size: clamp(1.7rem, 4vw, 2.5rem);
-        line-height: 1.1;
+        font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+        line-height: 1.12;
         letter-spacing: -0.015em;
       }
 
       .section-head h2 em {
         font-style: italic;
         font-weight: 600;
+        color: var(--accent);
       }
 
       .section-head p {
@@ -338,126 +278,251 @@
         max-width: 52ch;
       }
 
-      /* ---------- Tentang ---------- */
-      .pullquote {
+      /* ---------- Subtema ---------- */
+      .subtema-list {
+        list-style: none;
+        border-top: 1.5px solid var(--line-strong);
+        max-width: 720px;
+      }
+
+      .subtema-list li {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        padding: 15px 8px;
+        border-bottom: 1px solid var(--line);
         font-family: "Fraunces", Georgia, serif;
-        font-style: italic;
-        font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-        line-height: 1.45;
-        border-left: 3px solid var(--red);
-        padding-left: 22px;
-        margin: 0 0 20px;
+        font-size: 1.15rem;
+        transition: background 0.15s;
       }
 
-      .about-copy p + p {
-        margin-top: 14px;
+      .subtema-list li:hover {
+        background: color-mix(in srgb, var(--accent) 6%, transparent);
       }
 
-      .about-copy {
-        color: var(--ink);
-      }
-
-      .about-copy p {
-        max-width: 58ch;
-      }
-
-      .facts {
-        margin-top: 28px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-      }
-
-      .fact {
-        background: var(--paper);
-        padding: 18px 16px;
-      }
-
-      .fact strong {
-        display: block;
-        font-family: "Fraunces", Georgia, serif;
-        font-size: 1.9rem;
+      .subtema-list .idx {
+        font-family: "Instrument Sans", Arial, sans-serif;
+        font-size: 0.8rem;
         font-weight: 600;
-        line-height: 1.1;
-        color: var(--red);
+        color: var(--accent);
+        min-width: 28px;
       }
 
-      .fact span {
-        font-size: 0.85rem;
-        color: var(--ink-soft);
-      }
-
-      /* ---------- Agenda ---------- */
-      .agenda-section {
+      /* ---------- Biaya ---------- */
+      .biaya-section {
         background: var(--paper-deep);
         border-block: 1.5px solid var(--line-strong);
       }
 
-      .agenda {
+      .biaya-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: clamp(28px, 5vw, 56px);
+      }
+
+      .price-table {
+        width: 100%;
+        border-collapse: collapse;
         border-top: 1.5px solid var(--line-strong);
       }
 
-      .agenda-row {
-        display: grid;
-        grid-template-columns: 130px minmax(0, 1.5fr) minmax(0, 1fr);
-        gap: 18px;
-        padding: 22px 12px;
-        border-bottom: 1px solid var(--line);
-        transition: background 0.15s;
-      }
-
-      .agenda-row:hover {
-        background: color-mix(in srgb, var(--ink) 4%, transparent);
-      }
-
-      .agenda-time {
-        font-variant-numeric: tabular-nums;
-        font-weight: 600;
-        font-size: 0.95rem;
-        color: var(--red);
-        padding-top: 4px;
-      }
-
-      .agenda-title {
+      .price-table caption {
+        text-align: left;
         font-family: "Fraunces", Georgia, serif;
-        font-size: 1.22rem;
+        font-size: 1.25rem;
         font-weight: 600;
-        line-height: 1.25;
+        padding-bottom: 12px;
       }
 
-      .agenda-desc {
+      .price-table th {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         color: var(--ink-soft);
-        font-size: 0.93rem;
-        margin-top: 4px;
+        text-align: right;
+        padding: 10px 4px;
+        border-bottom: 1px solid var(--line-strong);
       }
 
-      .agenda-speaker {
-        font-size: 0.93rem;
-        padding-top: 6px;
+      .price-table th:first-child {
+        text-align: left;
       }
 
-      .agenda-speaker strong {
+      .price-table td {
+        padding: 13px 4px;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.95rem;
+      }
+
+      .price-table td:not(:first-child) {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .price-table td:first-child {
+        font-weight: 500;
+      }
+
+      .price-table .early td {
+        color: var(--accent);
+        font-weight: 600;
+      }
+
+      .biaya-note {
+        margin-top: 26px;
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+
+      .biaya-note strong {
+        color: var(--accent);
+      }
+
+      /* ---------- Alur ---------- */
+      .timeline {
+        list-style: none;
+        border-left: 1.5px solid var(--line-strong);
+        margin-left: 8px;
+        max-width: 680px;
+      }
+
+      .timeline li {
+        position: relative;
+        padding: 0 0 30px 28px;
+      }
+
+      .timeline li:last-child {
+        padding-bottom: 0;
+      }
+
+      .timeline li::before {
+        content: "";
+        position: absolute;
+        left: -6.75px;
+        top: 8px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .timeline time {
         display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 3px;
+      }
+
+      .timeline strong {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.12rem;
         font-weight: 600;
       }
 
-      .agenda-speaker span {
+      .timeline p {
         color: var(--ink-soft);
+        font-size: 0.93rem;
+        margin-top: 2px;
+        max-width: 56ch;
+      }
+
+      /* ---------- Dokumen ---------- */
+      .doc-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+
+      .doc-link {
+        display: block;
+        text-decoration: none;
+        border: 1.5px solid var(--ink);
+        padding: 22px 20px;
+        transition: background 0.15s, color 0.15s, transform 0.15s;
+      }
+
+      .doc-link:hover {
+        background: var(--ink);
+        color: var(--paper);
+        transform: translateY(-2px);
+      }
+
+      .doc-link .tag {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      .doc-link:hover .tag {
+        color: var(--pink);
+      }
+
+      .doc-link strong {
+        display: block;
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.12rem;
+        font-weight: 600;
+        margin-top: 6px;
+        line-height: 1.3;
+      }
+
+      .doc-link span {
         font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      .doc-link:hover span {
+        color: #c3aed3;
+      }
+
+      /* ---------- Pembayaran ---------- */
+      .pay-card {
+        border: 1.5px solid var(--line-strong);
+        background: var(--paper-deep);
+        padding: clamp(24px, 4vw, 40px);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        align-items: center;
+      }
+
+      .pay-card dt {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 4px;
+      }
+
+      .pay-card dd {
+        font-family: "Fraunces", Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .pay-card .rek {
+        font-size: 1.35rem;
+        letter-spacing: 0.04em;
       }
 
       /* ---------- CTA ---------- */
       .cta {
         background: var(--ink);
         color: var(--paper);
-        padding: clamp(56px, 9vw, 96px) 0;
+        padding: clamp(56px, 9vw, 92px) 0;
       }
 
       .cta-inner {
         display: grid;
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
         gap: clamp(32px, 6vw, 72px);
         align-items: center;
       }
@@ -465,21 +530,19 @@
       .cta h2 {
         font-family: "Fraunces", Georgia, serif;
         font-weight: 400;
-        font-size: clamp(2rem, 5vw, 3.2rem);
-        line-height: 1.08;
-        letter-spacing: -0.015em;
+        font-size: clamp(1.9rem, 4.6vw, 3rem);
+        line-height: 1.1;
       }
 
       .cta h2 em {
         font-style: italic;
         font-weight: 600;
-        color: #e8a17a;
+        color: var(--pink);
       }
 
       .cta-side p {
-        color: #b9ad9c;
-        max-width: 38ch;
-        margin-bottom: 24px;
+        color: #c3aed3;
+        margin-bottom: 22px;
       }
 
       .btn-inverse {
@@ -489,21 +552,14 @@
       }
 
       .btn-inverse:hover {
-        background: #e8a17a;
-        border-color: #e8a17a;
-        color: var(--ink);
-      }
-
-      .cta-note {
-        margin-top: 14px;
-        font-size: 0.85rem;
-        color: #b9ad9c;
+        background: var(--pink);
+        border-color: var(--pink);
       }
 
       /* ---------- Footer ---------- */
       footer {
-        padding: 30px 0;
-        font-size: 0.85rem;
+        padding: 34px 0;
+        font-size: 0.88rem;
         color: var(--ink-soft);
       }
 
@@ -511,7 +567,19 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 10px;
+        gap: 14px;
+      }
+
+      .footer-inner a {
+        color: var(--ink);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: var(--accent);
+      }
+
+      .footer-inner a:hover {
+        color: var(--accent);
       }
 
       /* ---------- Responsif ---------- */
@@ -526,18 +594,8 @@
           align-self: start;
         }
 
-        .meta dl {
-          grid-template-columns: 1fr;
-        }
-
-        .agenda-row {
-          grid-template-columns: 1fr;
-          gap: 6px;
-          padding: 20px 8px;
-        }
-
-        .agenda-time {
-          padding-top: 0;
+        .hero h1 {
+          max-width: none;
         }
       }
 
@@ -545,225 +603,329 @@
         .nav-links li.hide-mobile {
           display: none;
         }
-
-        .hero h1 {
-          max-width: none;
-        }
       }
     </style>
   </head>
   <body>
     <!-- ============================================================
-         GANTI URL PENDAFTARAN DI SINI (satu tempat, untuk semua tombol).
-         Semua data di halaman ini masih dummy / contoh.
+         TAUTAN — edit di sini saja (satu tempat untuk semua tombol).
+         Sumber: alur pendaftaran resmi SNBI XVIII 2026 + situs
+         snbi2025.my.canva.site. Tautan "Template" diambil dari situs
+         tahun lalu — mohon diverifikasi.
          ============================================================ -->
     <script>
-      const URL_PENDAFTARAN =
-        "https://docs.google.com/forms/d/e/CONTOH-GANTI-DENGAN-LINK-ANDA/viewform";
+      const TAUTAN = {
+        peserta: "https://bit.ly/PendaftaranPesertaSNBI2026",
+        pemakalah: "https://bit.ly/PendaftaranPemakalahSNBI2026",
+        alurPemakalah:
+          "https://docs.google.com/document/d/1Uq41bFn4YhzlN6PFqAjHJjEZRefPPPvq/edit?usp=sharing",
+        templateAbstrak:
+          "https://docs.google.com/document/d/1dthBVUjt_nSQmdQCw1oCj_ejJ93qCnOD/edit?usp=sharing",
+        templateFullPaper:
+          "https://docs.google.com/document/d/1p5WcawSXUmEGLCMRab2_Y_NTqbimYwrU/edit?usp=sharing",
+        konfirmasiPembayaran:
+          "https://docs.google.com/forms/d/e/1FAIpQLSdjRw5mXHGzalLhPHcP54tE1X2BT4_EK-6Zb-qGkcwhYVpm3Q/viewform",
+        wa: "http://wa.me/6285162533947",
+        email: "mailto:snbi@unud.ac.id",
+      };
 
       document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("[data-daftar]").forEach((el) => {
-          el.setAttribute("href", URL_PENDAFTARAN);
-          el.setAttribute("target", "_blank");
-          el.setAttribute("rel", "noopener");
+        document.querySelectorAll("[data-link]").forEach((el) => {
+          const key = el.getAttribute("data-link");
+          const url = TAUTAN[key];
+          if (url) {
+            el.setAttribute("href", url);
+            el.setAttribute("target", "_blank");
+            el.setAttribute("rel", "noopener");
+          }
         });
       });
     </script>
 
     <nav class="nav">
       <div class="nav-inner">
-        <a class="wordmark" href="#">Seminar <em>Bahasa Ibu</em></a>
+        <a class="wordmark" href="#">SNBI <em>XVIII 2026</em></a>
         <ul class="nav-links">
-          <li class="hide-mobile"><a href="#tentang">Tentang</a></li>
-          <li class="hide-mobile"><a href="#agenda">Agenda</a></li>
-          <li><a class="nav-cta" href="#daftar" data-daftar>Daftar →</a></li>
+          <li class="hide-mobile"><a href="#subtema">Subtema</a></li>
+          <li class="hide-mobile"><a href="#biaya">Biaya</a></li>
+          <li class="hide-mobile"><a href="#alur">Alur</a></li>
+          <li><a class="nav-cta" href="#daftar">Daftar ↓</a></li>
         </ul>
       </div>
     </nav>
 
     <header class="hero">
       <div class="wrap">
-        <p class="kicker">Seminar Nasional · Hari Bahasa Ibu Sedunia</p>
+        <p class="kicker">Seminar Nasional Bahasa Ibu · SNBI XVIII 2026</p>
         <div class="hero-row">
           <div>
-            <h1>Merawat <em>bahasa ibu</em>, menjaga jati diri.</h1>
+            <h1>
+              Bahasa Ibu sebagai <em>Pilar Identitas Budaya</em>: Tantangan dan
+              Peluang di Era Modernisasi Digital
+            </h1>
             <p class="hero-lede">
-              Satu hari bersama ahli bahasa, pendidik, dan budayawan —
-              membahas nasib 700-an bahasa daerah Indonesia dan apa yang bisa
-              kita lakukan mulai dari rumah.
+              Pemakalah diwajibkan mengirimkan abstrak sesuai tema dan subtema
+              SNBI XVIII. Pendaftaran terbuka untuk peserta dan pemakalah,
+              mahasiswa maupun umum, online maupun offline.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" data-daftar>Daftar — Gratis</a>
-              <a class="link-arrow" href="#agenda">Lihat agenda ↓</a>
+              <a class="btn btn-solid" data-link="peserta">Daftar Peserta ↗</a>
+              <a class="btn btn-outline" data-link="pemakalah">Daftar Pemakalah ↗</a>
             </div>
+            <p class="hero-note">
+              Early bird 24 Nov – 24 Des 2025 · Pengiriman abstrak s.d. 20 Jan 2026
+            </p>
           </div>
-          <div class="meta" aria-label="Informasi acara">
-            <dl>
-              <div class="meta-cell">
-                <dt>Tanggal</dt>
-                <dd>Sabtu, 21 Feb 2026</dd>
-              </div>
-              <div class="meta-cell">
-                <dt>Waktu</dt>
-                <dd>09.00–15.00 WIB</dd>
-              </div>
-              <div class="meta-cell">
-                <dt>Lokasi</dt>
-                <dd>Aula Kampus, Jakarta</dd>
-              </div>
-              <div class="meta-cell">
-                <dt>Format</dt>
-                <dd>Hadir / Daring</dd>
-              </div>
-            </dl>
-          </div>
+          <dl class="meta" aria-label="Informasi penting">
+            <div class="meta-cell">
+              <dt>Early Bird</dt>
+              <dd>24 Nov – 24 Des 2025</dd>
+            </div>
+            <div class="meta-cell">
+              <dt>Kirim Abstrak</dt>
+              <dd>24 Nov 2025 – 20 Jan 2026</dd>
+            </div>
+            <div class="meta-cell">
+              <dt>Pengumuman Abstrak</dt>
+              <dd>30 Januari 2026</dd>
+            </div>
+            <div class="meta-cell">
+              <dt>Kirim Full Paper</dt>
+              <dd>31 Jan – 15 Feb 2026</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </header>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Jawa</span><span>Sunda</span><span>Batak</span><span>Bugis</span
-        ><span>Minangkabau</span><span>Bali</span><span>Banjar</span><span>Aceh</span
-        ><span>Makassar</span><span>Dayak</span><span>Papua</span><span>Sasak</span
-        ><span>Rejang</span><span>Gorontalo</span><span>Lampung</span><span>Melayu</span>
-        <!-- duplikat untuk animasi mulus -->
-        <span>Jawa</span><span>Sunda</span><span>Batak</span><span>Bugis</span
-        ><span>Minangkabau</span><span>Bali</span><span>Banjar</span><span>Aceh</span
-        ><span>Makassar</span><span>Dayak</span><span>Papua</span><span>Sasak</span
-        ><span>Rejang</span><span>Gorontalo</span><span>Lampung</span><span>Melayu</span>
-      </div>
-    </div>
-
-    <section class="section" id="tentang">
+    <section class="section" id="subtema">
       <div class="wrap">
         <div class="section-head">
-          <h2>Tentang <em>seminar</em></h2>
+          <h2>Subtema <em>SNBI XVIII</em></h2>
           <p>
-            Diperingati setiap 21 Februari, Hari Bahasa Ibu Sedunia mengingatkan
-            kita bahwa setiap bahasa yang hilang adalah satu cara pandang dunia
-            yang lenyap.
+            Abstrak dapat dikirimkan mulai 24 November 2025 hingga 20 Januari
+            2026, dan akan diulas oleh reviewer.
           </p>
         </div>
-        <div class="about-copy">
-          <blockquote class="pullquote">
-            “Bahasa ibu adalah rumah pertama bagi pikiran — tempat kita belajar
-            menamai dunia.”
-          </blockquote>
+        <ol class="subtema-list">
+          <li><span class="idx">01</span> Mikrolinguistik</li>
+          <li><span class="idx">02</span> Makrolinguistik</li>
+          <li><span class="idx">03</span> Revitalisasi Bahasa</li>
+          <li><span class="idx">04</span> Pemertahanan dan Ketahanan Bahasa</li>
+          <li><span class="idx">05</span> Bahasa Ibu di Era Modernisasi Digital</li>
+          <li><span class="idx">06</span> Wacana dan Sastra Digital</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section biaya-section" id="biaya">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Rincian <em>biaya</em></h2>
           <p>
-            Indonesia memiliki lebih dari 700 bahasa daerah, namun sebagian
-            besar berstatus terancam karena minimnya regenerasi penutur. Seminar
-            ini menghadirkan tiga sudut pandang — linguistik, pendidikan, dan
-            budaya — untuk menjawab satu pertanyaan: bagaimana kita menjaga
-            bahasa ibu tetap hidup di tengah generasi yang tumbuh dua bahasa?
-          </p>
-          <p>
-            Terbuka untuk mahasiswa, guru, peneliti, dan siapa pun yang peduli
-            pada bahasa dan budaya Indonesia.
+            Seluruh rincian biaya dihitung per orang. Manfaatkan masa early
+            bird 24 November – 24 Desember 2025.
           </p>
         </div>
-        <div class="facts">
-          <div class="fact">
-            <strong>700+</strong>
-            <span>bahasa daerah di Indonesia (data dummy)</span>
-          </div>
-          <div class="fact">
-            <strong>3</strong>
-            <span>pemateri utama</span>
-          </div>
-          <div class="fact">
-            <strong>200</strong>
-            <span>kuota peserta</span>
-          </div>
-          <div class="fact">
-            <strong>0</strong>
-            <span>biaya pendaftaran</span>
-          </div>
+        <div class="biaya-grid">
+          <table class="price-table">
+            <caption>Peserta</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kategori</th>
+                <th scope="col">Normal</th>
+                <th scope="col">Early Bird</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mahasiswa — Online</td>
+                <td>Rp70.000</td>
+                <td>Rp50.000</td>
+              </tr>
+              <tr>
+                <td>Mahasiswa — Offline</td>
+                <td>Rp95.000</td>
+                <td>Rp75.000</td>
+              </tr>
+              <tr>
+                <td>Umum — Online</td>
+                <td>Rp175.000</td>
+                <td>Rp150.000</td>
+              </tr>
+              <tr>
+                <td>Umum — Offline</td>
+                <td>Rp200.000</td>
+                <td>Rp175.000</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="price-table">
+            <caption>Pemakalah</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kategori</th>
+                <th scope="col">Biaya</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pemakalah Mahasiswa — Online</td>
+                <td>Rp175.000</td>
+              </tr>
+              <tr>
+                <td>Pemakalah Mahasiswa — Offline</td>
+                <td>Rp200.000</td>
+              </tr>
+              <tr>
+                <td>Pemakalah Umum — Online</td>
+                <td>Rp225.000</td>
+              </tr>
+              <tr>
+                <td>Pemakalah Umum — Offline</td>
+                <td>Rp250.000</td>
+              </tr>
+              <tr class="early">
+                <td>Ekstra paper (per orang)</td>
+                <td>+Rp50.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="biaya-note">
+          <strong>Early bird: 24 November – 24 Desember 2025.</strong> Semua
+          rincian biaya adalah biaya per orang.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="alur">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Alur <em>pendaftaran</em></h2>
+          <p>
+            Peserta yang dinyatakan lulus abstrak diwajibkan melakukan
+            pembayaran dan mengunggah bukti pembayaran melalui tautan yang
+            dikirim via email.
+          </p>
+        </div>
+        <ol class="timeline">
+          <li>
+            <time>24 Nov 2025 – 20 Jan 2026</time>
+            <strong>Pengiriman abstrak</strong>
+            <p>
+              Abstrak dikirim sesuai tema &amp; subtema SNBI XVIII menggunakan
+              template yang tersedia, lalu diulas oleh reviewer.
+            </p>
+          </li>
+          <li>
+            <time>30 Januari 2026</time>
+            <strong>Pengumuman kelulusan abstrak</strong>
+            <p>
+              Informasi kelulusan disampaikan melalui email yang telah
+              didaftarkan.
+            </p>
+          </li>
+          <li>
+            <time>Setelah kelulusan</time>
+            <strong>Pembayaran &amp; unggah bukti</strong>
+            <p>
+              Pembayaran ke rekening BNI 1890358156 a.n. I Gusti Agung Ayu
+              Laksmi Dewi, lalu unggah bukti pembayaran melalui tautan yang
+              dikirim via email.
+            </p>
+          </li>
+          <li>
+            <time>31 Jan – 15 Feb 2026</time>
+            <strong>Pengumpulan full paper</strong>
+            <p>
+              Peserta yang lulus mengumpulkan full paper menggunakan template
+              yang tersedia.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="dokumen" style="padding-top: 0">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Dokumen <em>&amp; tautan</em></h2>
+          <p>
+            Informasi lebih lanjut dapat diakses melalui tautan di bawah ini.
+          </p>
+        </div>
+        <div class="doc-list">
+          <a class="doc-link" data-link="alurPemakalah">
+            <span class="tag">Google Docs</span>
+            <strong>Alur Pendaftaran Pemakalah SNBI XVIII 2026</strong>
+            <span>Baca dokumen ↗</span>
+          </a>
+          <a class="doc-link" data-link="templateAbstrak">
+            <span class="tag">Google Docs</span>
+            <strong>Template Abstrak SNBI XVIII 2026</strong>
+            <span>Buka template ↗</span>
+          </a>
+          <a class="doc-link" data-link="templateFullPaper">
+            <span class="tag">Google Docs</span>
+            <strong>Template Full Paper SNBI XVIII 2026</strong>
+            <span>Buka template ↗</span>
+          </a>
+          <a class="doc-link" data-link="konfirmasiPembayaran">
+            <span class="tag">Google Form</span>
+            <strong>Formulir Konfirmasi Pembayaran Pemakalah</strong>
+            <span>Isi formulir ↗</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section agenda-section" id="agenda">
+    <section class="section" id="pembayaran" style="padding-top: 0">
       <div class="wrap">
-        <div class="section-head">
-          <h2>Agenda <em>&amp; pemateri</em></h2>
-          <p>
-            Sesi berlangsung pada Sabtu, 21 Februari 2026. Nama pemateri di
-            bawah masih contoh (dummy) dan akan diperbarui.
-          </p>
+        <div class="section-head" style="margin-bottom: 28px">
+          <h2>Rekening <em>pembayaran</em></h2>
         </div>
-        <div class="agenda">
-          <div class="agenda-row">
-            <div class="agenda-time">08.00–09.00</div>
-            <div>
-              <h3 class="agenda-title">Pendaftaran ulang &amp; pembukaan</h3>
-              <p class="agenda-desc">Penyambutan peserta oleh panitia</p>
-            </div>
-            <div class="agenda-speaker"></div>
+        <dl class="pay-card">
+          <div>
+            <dt>Bank</dt>
+            <dd>BNI</dd>
           </div>
-          <div class="agenda-row">
-            <div class="agenda-time">09.00–10.30</div>
-            <div>
-              <h3 class="agenda-title">Vitalitas bahasa daerah di era digital</h3>
-              <p class="agenda-desc">Ancaman, peluang, dan peran teknologi</p>
-            </div>
-            <div class="agenda-speaker">
-              <strong>Dr. Sari Rahmawati</strong>
-              <span>Linguistik, Universitas Indonesia</span>
-            </div>
+          <div>
+            <dt>Nomor rekening</dt>
+            <dd class="rek">1890358156</dd>
           </div>
-          <div class="agenda-row">
-            <div class="agenda-time">10.45–12.00</div>
-            <div>
-              <h3 class="agenda-title">Cerita rakyat sebagai warisan lisan</h3>
-              <p class="agenda-desc">Dongeng dari ruang keluarga ke panggung nasional</p>
-            </div>
-            <div class="agenda-speaker">
-              <strong>Bambu Wicaksana</strong>
-              <span>Budayawan &amp; penulis</span>
-            </div>
+          <div>
+            <dt>Atas nama</dt>
+            <dd>I Gusti Agung Ayu Laksmi Dewi</dd>
           </div>
-          <div class="agenda-row">
-            <div class="agenda-time">13.00–14.15</div>
-            <div>
-              <h3 class="agenda-title">Pembelajaran berbasis bahasa ibu</h3>
-              <p class="agenda-desc">Apa yang riset katakan tentang sekolah multibahasa</p>
-            </div>
-            <div class="agenda-speaker">
-              <strong>Anisa Larasati, M.Pd.</strong>
-              <span>Pendidik &amp; peneliti multibahasa</span>
-            </div>
-          </div>
-          <div class="agenda-row">
-            <div class="agenda-time">14.15–15.00</div>
-            <div>
-              <h3 class="agenda-title">Diskusi panel &amp; penutupan</h3>
-              <p class="agenda-desc">Tanya jawab terbuka dengan seluruh pemateri</p>
-            </div>
-            <div class="agenda-speaker"></div>
-          </div>
-        </div>
+        </dl>
       </div>
     </section>
 
     <section class="cta" id="daftar">
       <div class="wrap cta-inner">
-        <h2>Amankan kursi Anda sebelum <em>penuh</em>.</h2>
+        <h2>Mendaftar sebagai <em>peserta</em> atau <em>pemakalah</em>?</h2>
         <div class="cta-side">
           <p>
-            Pendaftaran gratis melalui Google Docs dan hanya butuh dua menit.
-            Seluruh peserta menerima e-sertifikat.
+            Pendaftaran dilakukan melalui Google Form. Pastikan memilih jalur
+            yang sesuai sebelum mengisi formulir.
           </p>
-          <a class="btn btn-inverse" data-daftar>Daftar via Google Docs ↗</a>
-          <p class="cta-note">Kuota 200 peserta · ditutup 14 Februari 2026 (dummy)</p>
+          <div class="hero-actions" style="margin-top: 0">
+            <a class="btn btn-inverse" data-link="peserta">Daftar Peserta ↗</a>
+            <a class="btn btn-inverse" data-link="pemakalah">Daftar Pemakalah ↗</a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="wrap footer-inner">
-        <span>&copy; 2026 Seminar Bahasa Ibu</span>
-        <span> Diperingati setiap 21 Februari</span>
+        <span>&copy; 2026 Seminar Nasional Bahasa Ibu (SNBI) XVIII</span>
+        <span>
+          Kontak:
+          <a data-link="email">snbi@unud.ac.id</a> ·
+          <a data-link="wa">WhatsApp</a>
+        </span>
       </div>
     </footer>
   </body>
