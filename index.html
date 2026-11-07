@@ -406,21 +406,188 @@
         font-size: 1.05rem;
       }
 
-      /* ---------- Daftar ---------- */
-      .register {
+      /* ---------- Daftar: tiket ---------- */
+      .ticket {
+        position: relative;
         display: grid;
-        gap: 12px;
+        grid-template-columns: 1.25fr 1fr;
+        background: var(--surface);
+        border: 1.5px solid var(--ink);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 6px 6px 0 var(--accent-soft);
       }
 
-      .register .btn {
-        width: 100%;
-        text-align: center;
+      .stub {
+        padding: 28px 26px 24px;
+        min-width: 0;
+      }
+
+      .stub .tag {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+
+      /* garis sobekan di tengah + lubang punch */
+      .ticket::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(100% - (100% / 2.25));
+        border-left: 2px dashed var(--line);
+      }
+
+      .ticket::after {
+        content: "";
+        position: absolute;
+        left: calc(100% - (100% / 2.25) - 11px);
+        top: -11px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 1.5px solid var(--ink);
+      }
+
+      .ticket .notch-bottom {
+        position: absolute;
+        left: calc(100% - (100% / 2.25) - 11px);
+        bottom: -11px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 1.5px solid var(--ink);
+      }
+
+      .t-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        text-decoration: none;
+        padding: 13px 14px;
+        margin: 0 -14px;
+        border-radius: 10px;
+        transition: background 0.16s ease, color 0.16s ease;
+      }
+
+      .t-row + .t-row {
+        margin-top: 2px;
+      }
+
+      .t-row strong {
+        font-weight: 600;
+        font-size: 0.98rem;
+      }
+
+      .t-row .arrow {
+        color: var(--muted);
+        transition: color 0.16s, transform 0.16s;
+      }
+
+      .t-row:hover {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .t-row:hover .arrow {
+        color: #fff;
+        transform: translateX(3px);
+      }
+
+      .t-row .t-price {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .t-row .t-price s {
+        display: block;
+        font-size: 0.76rem;
+        font-weight: 500;
+        color: var(--muted);
+      }
+
+      .t-row:hover .t-price s {
+        color: #d9c6f0;
+      }
+
+      /* sisi pemakalah */
+      .stub-pemakalah {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .t-big {
+        display: block;
+        text-decoration: none;
+        margin-top: auto;
+        padding: 20px;
+        border: 1.5px solid var(--ink);
+        border-radius: 12px;
+        background: var(--accent);
+        color: #fff;
+        transition: background 0.16s ease, transform 0.16s ease;
+      }
+
+      .t-big:hover {
+        background: #5a1aa0;
+        transform: translateY(-2px);
+      }
+
+      .t-big strong {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .t-big span {
+        display: block;
+        font-size: 0.88rem;
+        opacity: 0.85;
+        margin-top: 4px;
+      }
+
+      .t-extra {
+        margin-top: 14px;
+        font-size: 0.83rem;
+        color: var(--muted);
       }
 
       .register-note {
         font-size: 0.88rem;
         color: var(--muted);
-        margin-top: 6px;
+        margin-top: 18px;
+      }
+
+      @media (max-width: 720px) {
+        .ticket {
+          grid-template-columns: 1fr;
+        }
+
+        .ticket::before,
+        .ticket::after,
+        .ticket .notch-bottom {
+          display: none;
+        }
+
+        .stub-pemakalah {
+          border-top: 2px dashed var(--line);
+        }
+
+        .t-big {
+          margin-top: 20px;
+        }
       }
 
       /* ---------- Footer ---------- */
@@ -754,15 +921,47 @@
           Peserta memilih formulir sesuai kategori. Pemakalah cukup satu
           formulir.
         </p>
-        <div class="register">
-          <a class="btn btn-primary" data-link="pesertaMahasiswaOnline">Peserta Mahasiswa — Online ↗</a>
-          <a class="btn btn-primary" data-link="pesertaMahasiswaOffline">Peserta Mahasiswa — Offline ↗</a>
-          <a class="btn btn-primary" data-link="pesertaUmumOnline">Peserta Umum — Online ↗</a>
-          <a class="btn btn-primary" data-link="pesertaUmumOffline">Peserta Umum — Offline ↗</a>
-          <a class="btn btn-ghost" data-link="pemakalah">Pemakalah (semua kategori) ↗</a>
+        <div class="ticket">
+          <div class="stub">
+            <span class="tag">Formulir Peserta</span>
+            <a class="t-row" data-link="pesertaMahasiswaOnline">
+              <strong>Mahasiswa — Online</strong>
+              <span class="t-price">Rp50.000<s>Rp70.000</s></span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaMahasiswaOffline">
+              <strong>Mahasiswa — Offline</strong>
+              <span class="t-price">Rp75.000<s>Rp95.000</s></span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaUmumOnline">
+              <strong>Umum — Online</strong>
+              <span class="t-price">Rp150.000<s>Rp175.000</s></span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaUmumOffline">
+              <strong>Umum — Offline</strong>
+              <span class="t-price">Rp175.000<s>Rp200.000</s></span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+          <div class="stub stub-pemakalah">
+            <span class="tag">Formulir Pemakalah</span>
+            <p class="section-intro" style="margin-bottom: 0">
+              Satu formulir untuk semua kategori pemakalah, mahasiswa maupun
+              umum.
+            </p>
+            <a class="t-big" data-link="pemakalah">
+              <strong>Daftar Pemakalah ↗</strong>
+              <span>Mulai Rp175.000 · kirim abstrak s.d. 20 Jan 2026</span>
+            </a>
+            <p class="t-extra">Ekstra paper +Rp50.000/orang</p>
+            <span class="notch-bottom" aria-hidden="true"></span>
+          </div>
         </div>
         <p class="register-note">
-          Semua formulir dibuka di tab baru (Google Form).
+          Harga ungu adalah early bird (s.d. 24 Des 2025). Semua formulir
+          dibuka di tab baru.
         </p>
       </div>
     </section>
