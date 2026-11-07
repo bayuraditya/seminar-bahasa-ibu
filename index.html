@@ -158,11 +158,28 @@
       }
 
       .hero h1 {
-        font-size: clamp(1.8rem, 4.6vw, 2.7rem);
+        font-size: clamp(1.9rem, 5vw, 3rem);
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.15;
         letter-spacing: -0.02em;
-        max-width: 22ch;
+        margin-bottom: 14px;
+      }
+
+      .hero .h1-year {
+        display: block;
+        font-size: 0.55em;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.02em;
+        margin-top: 6px;
+      }
+
+      .hero .hero-sub {
+        font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--ink);
+        max-width: 34ch;
         margin-bottom: 16px;
       }
 
@@ -687,11 +704,11 @@
 
     <header class="hero">
       <div class="wrap">
-        <span class="badge">Seminar Nasional Bahasa Ibu · SNBI XIX 2026</span>
-        <h1>
+        <h1>Seminar Nasional Bahasa Ibu <span class="h1-year">SNBI XIX 2026</span></h1>
+        <p class="hero-sub">
           Bahasa Ibu sebagai Pilar Identitas Budaya: Tantangan dan Peluang di
           Era Modernisasi Digital
-        </h1>
+        </p>
         <p>
           Pendaftaran terbuka untuk peserta dan pemakalah — mahasiswa maupun
           umum, online maupun offline. Pemakalah mengirimkan abstrak sesuai
