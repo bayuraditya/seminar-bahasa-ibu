@@ -8,6 +8,7 @@
       content="Seminar Nasional Bahasa Ibu (SNBI) XVIII 2026 — Pendaftaran peserta & pemakalah."
     />
     <title>SNBI XVIII 2026 — Seminar Nasional Bahasa Ibu</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -624,7 +625,15 @@
         templateFullPaper:
           "https://docs.google.com/document/d/1p5WcawSXUmEGLCMRab2_Y_NTqbimYwrU/edit?usp=sharing",
         konfirmasiPembayaran:
-          "https://docs.google.com/forms/d/e/1FAIpQLSdjRw5mXHGzalLhPHcP54tE1X2BT4_EK-6Zb-qGkcwhYVpm3Q/viewform",
+          "https://docs.google.com/forms/d/e/1FAIpQLSemeMw--Y9-PPF19b9Nwmm8kD8Sau7e43DN6c7j3PsSkv0FwQ/viewform",
+        pesertaUmumOnline:
+          "https://docs.google.com/forms/d/e/1FAIpQLSf5hJlbQa3Na6O4C059qgvRSwamofY4p8n58ZoBi17qdLUMdw/viewform",
+        pesertaUmumOffline:
+          "https://docs.google.com/forms/d/e/1FAIpQLSfq7Iq4owns3OVpPBFu6idzZSm8aesS06yasnlaumbKbXHr2Q/viewform",
+        pesertaMahasiswaOnline:
+          "https://docs.google.com/forms/d/e/1FAIpQLSc2kmq8W09xGD1ZDGnUz2B-kip4lGKTZ3IvOWJXFssw_c7i_w/viewform",
+        // TODO: ganti dengan link form khusus mahasiswa offline saat tersedia
+        pesertaMahasiswaOffline: "https://bit.ly/PendaftaranPesertaSNBI2026",
         wa: "http://wa.me/6285162533947",
         email: "mailto:snbi@unud.ac.id",
       };
@@ -669,7 +678,7 @@
               mahasiswa maupun umum, online maupun offline.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-solid" data-link="peserta">Daftar Peserta ↗</a>
+              <a class="btn btn-solid" href="#daftar">Daftar Peserta ↓</a>
               <a class="btn btn-outline" data-link="pemakalah">Daftar Pemakalah ↗</a>
             </div>
             <p class="hero-note">
@@ -907,12 +916,15 @@
         <h2>Mendaftar sebagai <em>peserta</em> atau <em>pemakalah</em>?</h2>
         <div class="cta-side">
           <p>
-            Pendaftaran dilakukan melalui Google Form. Pastikan memilih jalur
-            yang sesuai sebelum mengisi formulir.
+            Peserta memilih formulir sesuai kategori. Pemakalah cukup satu
+            formulir.
           </p>
           <div class="hero-actions" style="margin-top: 0">
-            <a class="btn btn-inverse" data-link="peserta">Daftar Peserta ↗</a>
-            <a class="btn btn-inverse" data-link="pemakalah">Daftar Pemakalah ↗</a>
+            <a class="btn btn-inverse" data-link="pesertaMahasiswaOnline">Mahasiswa — Online ↗</a>
+            <a class="btn btn-inverse" data-link="pesertaMahasiswaOffline">Mahasiswa — Offline ↗</a>
+            <a class="btn btn-inverse" data-link="pesertaUmumOnline">Umum — Online ↗</a>
+            <a class="btn btn-inverse" data-link="pesertaUmumOffline">Umum — Offline ↗</a>
+            <a class="btn btn-inverse" data-link="pemakalah" style="margin-top: 10px">Daftar Pemakalah ↗</a>
           </div>
         </div>
       </div>
