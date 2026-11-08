@@ -17,8 +17,8 @@
     />
     <style>
       :root {
-        --bg: #fff9d0;
-        --surface: #fffdf0;
+        --bg: #ffffff;
+        --surface: #fffbec;
         --ink: #623b1d;
         --muted: #7d5e3e;
         --accent: #ffc30d;
@@ -82,6 +82,11 @@
         border-top: 1px solid var(--line);
       }
 
+      /* agar judul tidak tertutup nav saat lompat ke anker */
+      section[id] {
+        scroll-margin-top: 76px;
+      }
+
       .section-intro {
         color: var(--muted);
         max-width: 54ch;
@@ -93,7 +98,7 @@
         position: sticky;
         top: 0;
         z-index: 40;
-        background: rgba(255, 249, 208, 0.92);
+        background: rgba(255, 255, 255, 0.92);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--line);
       }
@@ -260,6 +265,21 @@
         padding: 9px 18px;
         font-weight: 500;
         font-size: 0.95rem;
+        transition: border-color 0.15s, background 0.15s,
+          transform 0.16s ease, box-shadow 0.16s ease;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .chip:hover {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+        transform: translateY(-2px);
+        box-shadow: 3px 3px 0 var(--accent-bright);
+      }
+
+      .chip:active {
+        transform: translateY(0) scale(0.97);
+        box-shadow: none;
       }
 
       /* ---------- Daftar: tarif pemakalah ---------- */
@@ -361,11 +381,14 @@
         background: var(--surface);
         text-decoration: none;
         margin-bottom: 10px;
-        transition: border-color 0.15s;
+        transition: border-color 0.15s, transform 0.16s ease,
+          box-shadow 0.16s ease;
       }
 
       .doc-list a:hover {
         border-color: var(--accent);
+        transform: translateY(-1px);
+        box-shadow: 3px 3px 0 var(--accent-soft);
       }
 
       .doc-list .tag {
@@ -636,15 +659,15 @@
         text-decoration-thickness: 1.5px;
       }
 
+      /* saat baris di-hover (latar amber), semua teks pakai warna solid
+         yang kontras — tanpa opasitas agar tetap mudah dibaca */
       .t-row:hover .t-reg,
       .t-row:hover .t-reg .p-label {
-        color: var(--ink);
-        opacity: 0.72;
+        color: var(--muted);
       }
 
       .t-row:hover .t-eb .p-label {
         color: var(--ink);
-        opacity: 0.72;
       }
 
       /* sisi pemakalah */
@@ -682,7 +705,6 @@
       .t-big span {
         display: block;
         font-size: 0.88rem;
-        opacity: 0.85;
         margin-top: 4px;
       }
 
