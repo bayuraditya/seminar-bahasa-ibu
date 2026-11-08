@@ -17,13 +17,20 @@
     />
     <style>
       :root {
-        --bg: #fdfcfe;
-        --surface: #ffffff;
-        --ink: #241a33;
-        --muted: #71637f;
-        --accent: #7426c9;
-        --accent-soft: #f4edfc;
-        --line: #ece5f4;
+        --bg: #fff9d0;
+        --surface: #fffdf0;
+        --ink: #623b1d;
+        --muted: #7d5e3e;
+        --accent: #ffc30d;
+        --accent-bright: #ffde59;
+        --accent-soft: #ffeea9;
+        --ochre: #8f6400;
+        --line: #f0e3a6;
+      }
+
+      ::selection {
+        background: var(--accent-bright);
+        color: var(--ink);
       }
 
       * {
@@ -58,7 +65,7 @@
       }
 
       :is(a, button):focus-visible {
-        outline: 2px solid var(--accent);
+        outline: 2px solid var(--ochre);
         outline-offset: 3px;
         border-radius: 4px;
       }
@@ -86,7 +93,7 @@
         position: sticky;
         top: 0;
         z-index: 40;
-        background: rgba(253, 252, 254, 0.92);
+        background: rgba(255, 249, 208, 0.92);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--line);
       }
@@ -135,7 +142,7 @@
       }
 
       .nav-links .nav-cta {
-        color: var(--accent);
+        color: var(--ochre);
         font-weight: 600;
       }
 
@@ -150,8 +157,8 @@
         font-weight: 600;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: var(--accent);
-        background: var(--accent-soft);
+        color: var(--ink);
+        background: var(--accent-bright);
         border-radius: 999px;
         padding: 6px 14px;
         margin-bottom: 22px;
@@ -198,11 +205,12 @@
 
       .btn-primary {
         background: var(--accent);
-        color: #fff;
+        color: var(--ink);
       }
 
       .btn-primary:hover {
-        background: #5a1aa0;
+        background: var(--ink);
+        color: var(--bg);
       }
 
       .btn-ghost {
@@ -213,7 +221,7 @@
 
       .btn-ghost:hover {
         border-color: var(--accent);
-        color: var(--accent);
+        color: var(--ochre);
       }
 
       .dates {
@@ -308,8 +316,8 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: var(--accent-soft);
-        color: var(--accent);
+        background: var(--accent-bright);
+        color: var(--ink);
         font-weight: 700;
         font-size: 0.9rem;
         display: inline-flex;
@@ -318,12 +326,12 @@
       }
 
       .steps time {
+        color: var(--ochre);
         display: block;
         font-size: 0.8rem;
         font-weight: 600;
         letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: var(--accent);
       }
 
       .steps strong {
@@ -365,7 +373,7 @@
         font-weight: 600;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        color: var(--accent);
+        color: var(--ochre);
         display: block;
       }
 
@@ -438,7 +446,7 @@
 
       .btn-copy:hover {
         border-color: var(--accent);
-        color: var(--accent);
+        color: var(--ochre);
       }
 
       .btn-copy:active {
@@ -451,7 +459,7 @@
 
       .btn-copy.copied {
         border-color: var(--accent);
-        color: var(--accent);
+        color: var(--ochre);
         background: var(--accent-soft);
       }
 
@@ -472,7 +480,7 @@
         border: 1.5px solid var(--ink);
         border-radius: 18px;
         overflow: hidden;
-        box-shadow: 6px 6px 0 var(--accent-soft);
+        box-shadow: 6px 6px 0 var(--accent-bright);
       }
 
       .stub {
@@ -554,8 +562,8 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background: #fff;
-        color: var(--accent);
+        background: var(--surface);
+        color: var(--ochre);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -565,26 +573,26 @@
 
       .t-row:hover {
         background: var(--accent);
-        color: #fff;
+        color: var(--ink);
       }
 
       .t-row:hover .arrow {
-        background: rgba(255, 255, 255, 0.2);
-        color: #fff;
+        background: rgba(98, 59, 29, 0.14);
+        color: var(--ink);
         transform: translateX(3px);
       }
 
       /* umpan balik sentuh di mobile */
       .t-row:active {
         background: var(--accent);
-        color: #fff;
-        border-color: #5a1aa0;
+        color: var(--ink);
+        border-color: var(--ink);
         transform: scale(0.98);
       }
 
       .t-row:active .arrow {
-        background: rgba(255, 255, 255, 0.2);
-        color: #fff;
+        background: rgba(98, 59, 29, 0.14);
+        color: var(--ink);
       }
 
       .t-row .t-price {
@@ -592,18 +600,51 @@
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
         font-size: 0.95rem;
+      }
+
+      .t-price .p-label {
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        margin-right: 6px;
+      }
+
+      .t-price .t-eb {
+        display: block;
         font-weight: 700;
       }
 
-      .t-row .t-price s {
+      .t-price .t-eb .p-label {
+        color: var(--ochre);
+      }
+
+      .t-price .t-reg {
         display: block;
-        font-size: 0.76rem;
+        margin-top: 1px;
+        font-size: 0.8rem;
         font-weight: 500;
         color: var(--muted);
       }
 
-      .t-row:hover .t-price s {
-        color: #d9c6f0;
+      .t-price .t-reg .p-label {
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .t-price .t-reg s {
+        text-decoration-thickness: 1.5px;
+      }
+
+      .t-row:hover .t-reg,
+      .t-row:hover .t-reg .p-label {
+        color: var(--ink);
+        opacity: 0.72;
+      }
+
+      .t-row:hover .t-eb .p-label {
+        color: var(--ink);
+        opacity: 0.72;
       }
 
       /* sisi pemakalah */
@@ -620,12 +661,14 @@
         border: 1.5px solid var(--ink);
         border-radius: 12px;
         background: var(--accent);
-        color: #fff;
-        transition: background 0.16s ease, transform 0.16s ease;
+        color: var(--ink);
+        transition: background 0.16s ease, color 0.16s ease,
+          transform 0.16s ease;
       }
 
       .t-big:hover {
-        background: #5a1aa0;
+        background: var(--ink);
+        color: var(--bg);
         transform: translateY(-2px);
       }
 
@@ -699,18 +742,19 @@
         align-items: center;
         gap: 8px;
         background: var(--accent);
-        color: #fff;
+        color: var(--ink);
         font-weight: 600;
         font-size: 0.95rem;
         text-decoration: none;
         padding: 13px 24px;
         border-radius: 10px;
-        transition: background 0.15s, transform 0.16s ease;
+        transition: background 0.15s, color 0.15s, transform 0.16s ease;
         -webkit-tap-highlight-color: transparent;
       }
 
       .btn-wa:hover {
-        background: #5a1aa0;
+        background: var(--ink);
+        color: var(--bg);
       }
 
       .btn-wa:active {
@@ -744,7 +788,7 @@
       }
 
       .footer-inner a:hover {
-        color: var(--accent);
+        color: var(--ochre);
       }
 
       /* ---------- Responsif ---------- */
@@ -1058,22 +1102,34 @@
             <span class="tag">Formulir Peserta</span>
             <a class="t-row" data-link="pesertaMahasiswaOnline">
               <strong>Mahasiswa — Online</strong>
-              <span class="t-price">Rp50.000<s>Rp70.000</s></span>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp50.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp70.000</s></span>
+              </span>
               <span class="arrow">→</span>
             </a>
             <a class="t-row" data-link="pesertaMahasiswaOffline">
               <strong>Mahasiswa — Offline</strong>
-              <span class="t-price">Rp75.000<s>Rp95.000</s></span>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp75.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp95.000</s></span>
+              </span>
               <span class="arrow">→</span>
             </a>
             <a class="t-row" data-link="pesertaUmumOnline">
               <strong>Umum — Online</strong>
-              <span class="t-price">Rp150.000<s>Rp175.000</s></span>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp150.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp175.000</s></span>
+              </span>
               <span class="arrow">→</span>
             </a>
             <a class="t-row" data-link="pesertaUmumOffline">
               <strong>Umum — Offline</strong>
-              <span class="t-price">Rp175.000<s>Rp200.000</s></span>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp175.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp200.000</s></span>
+              </span>
               <span class="arrow">→</span>
             </a>
           </div>
@@ -1094,9 +1150,9 @@
           </div>
         </div>
         <p class="register-note">
-          Harga utama adalah early bird, harga dicoret adalah reguler. Tarif
-          pemakalah tidak dibedakan early bird / reguler. Semua formulir
-          dibuka di tab baru.
+          Harga early bird berlaku 24 November – 24 Desember 2025. Tarif
+          pemakalah tunggal — tidak dibedakan early bird / reguler. Semua
+          formulir dibuka di tab baru.
         </p>
       </div>
     </section>
