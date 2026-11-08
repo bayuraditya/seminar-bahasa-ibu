@@ -6,7 +6,8 @@ const TAUTAN = {
     "https://docs.google.com/document/d/1dthBVUjt_nSQmdQCw1oCj_ejJ93qCnOD/edit?usp=sharing",
   templateFullPaper:
     "https://docs.google.com/document/d/1p5WcawSXUmEGLCMRab2_Y_NTqbimYwrU/edit?usp=sharing",
-  konfirmasiPembayaran:
+  // formulir konfirmasi pendaftaran PEMAKALAH (bukan peserta)
+  konfirmasiPendaftaran:
     "https://docs.google.com/forms/d/e/1FAIpQLSemeMw--Y9-PPF19b9Nwmm8kD8Sau7e43DN6c7j3PsSkv0FwQ/viewform",
   pesertaUmumOnline:
     "https://docs.google.com/forms/d/e/1FAIpQLSf5hJlbQa3Na6O4C059qgvRSwamofY4p8n58ZoBi17qdLUMdw/viewform",
