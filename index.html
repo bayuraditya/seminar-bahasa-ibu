@@ -254,69 +254,38 @@
         font-size: 0.95rem;
       }
 
-      /* ---------- Biaya ---------- */
-      .tables {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 28px;
+      /* ---------- Daftar: tarif pemakalah ---------- */
+      .p-list {
+        list-style: none;
+        font-size: 0.93rem;
       }
 
-      .price-card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 22px;
-      }
-
-      .price-card h3 {
-        font-size: 1.05rem;
-        font-weight: 700;
-        margin-bottom: 14px;
-      }
-
-      .price-table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      .price-table td {
-        padding: 10px 0;
+      .p-list li {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
         border-top: 1px solid var(--line);
-        font-size: 0.94rem;
       }
 
-      .price-table th {
-        padding: 0 0 8px;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--muted);
+      .p-list li:first-child {
+        border-top: 0;
       }
 
-      .price-table th:not(:first-child) {
-        text-align: right;
-      }
-
-      .price-table th.eb {
-        color: var(--accent);
-      }
-
-      .price-table td:not(:first-child) {
-        text-align: right;
+      .p-list span {
+        font-weight: 700;
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
       }
 
-      .price-table .eb {
-        color: var(--accent);
-        font-weight: 600;
+      .p-list .extra {
+        color: var(--muted);
+        font-size: 0.86rem;
       }
 
-      .fee-note {
-        margin-top: 20px;
-        font-size: 0.9rem;
-        color: var(--muted);
+      .p-list .extra span {
+        font-weight: 600;
       }
 
       /* ---------- Alur ---------- */
@@ -674,12 +643,6 @@
         margin-top: 4px;
       }
 
-      .t-extra {
-        margin-top: 14px;
-        font-size: 0.83rem;
-        color: var(--muted);
-      }
-
       .register-note {
         font-size: 0.88rem;
         color: var(--muted);
@@ -872,7 +835,6 @@
         </a>
         <ul class="nav-links">
           <li class="hide-mobile"><a href="#subtema">Subtema</a></li>
-          <li class="hide-mobile"><a href="#biaya">Biaya</a></li>
           <li class="hide-mobile"><a href="#alur">Alur</a></li>
           <li><a class="nav-cta" href="#daftar">Daftar</a></li>
         </ul>
@@ -931,89 +893,6 @@
           <span class="chip">Bahasa Ibu di Era Modernisasi Digital</span>
           <span class="chip">Wacana dan Sastra Digital</span>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="biaya">
-      <div class="wrap">
-        <h2>Rincian Biaya</h2>
-        <p class="section-intro">
-          Seluruh biaya dihitung per orang. Early bird berlaku 24 November –
-          24 Desember 2025.
-        </p>
-        <div class="tables">
-          <div class="price-card">
-            <h3>Peserta</h3>
-            <table class="price-table">
-              <thead>
-                <tr>
-                  <th scope="col">Kategori</th>
-                  <th scope="col">Reguler</th>
-                  <th scope="col" class="eb">Early bird</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Mahasiswa — Online</td>
-                  <td>Rp70.000</td>
-                  <td class="eb">Rp50.000</td>
-                </tr>
-                <tr>
-                  <td>Mahasiswa — Offline</td>
-                  <td>Rp95.000</td>
-                  <td class="eb">Rp75.000</td>
-                </tr>
-                <tr>
-                  <td>Umum — Online</td>
-                  <td>Rp175.000</td>
-                  <td class="eb">Rp150.000</td>
-                </tr>
-                <tr>
-                  <td>Umum — Offline</td>
-                  <td>Rp200.000</td>
-                  <td class="eb">Rp175.000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="price-card">
-            <h3>Pemakalah</h3>
-            <table class="price-table">
-              <thead>
-                <tr>
-                  <th scope="col">Kategori</th>
-                  <th scope="col">Tarif</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Pemakalah Mahasiswa — Online</td>
-                  <td>Rp175.000</td>
-                </tr>
-                <tr>
-                  <td>Pemakalah Mahasiswa — Offline</td>
-                  <td>Rp200.000</td>
-                </tr>
-                <tr>
-                  <td>Pemakalah Umum — Online</td>
-                  <td>Rp225.000</td>
-                </tr>
-                <tr>
-                  <td>Pemakalah Umum — Offline</td>
-                  <td>Rp250.000</td>
-                </tr>
-                <tr>
-                  <td>Ekstra paper (per orang)</td>
-                  <td class="eb">+Rp50.000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <p class="fee-note">
-          Tarif pemakalah tidak dibedakan early bird / reguler. Semua rincian
-          biaya adalah biaya per orang.
-        </p>
       </div>
     </section>
 
@@ -1169,10 +1048,10 @@
 
     <section class="section" id="daftar">
       <div class="wrap">
-        <h2>Pendaftaran</h2>
+        <h2>Biaya &amp; Pendaftaran</h2>
         <p class="section-intro">
-          Peserta memilih formulir sesuai kategori. Pemakalah cukup satu
-          formulir.
+          Pilih kategori lalu isi formulirnya. Harga early bird berlaku
+          24 November – 24 Desember 2025; semua biaya dihitung per orang.
         </p>
         <div class="ticket">
           <div class="stub">
@@ -1199,21 +1078,24 @@
             </a>
           </div>
           <div class="stub stub-pemakalah">
-            <span class="tag">Formulir Pemakalah</span>
-            <p class="section-intro" style="margin-bottom: 0">
-              Satu formulir untuk semua kategori pemakalah, mahasiswa maupun
-              umum.
-            </p>
+            <span class="tag">Pemakalah</span>
+            <ul class="p-list">
+              <li>Mahasiswa — Online <span>Rp175.000</span></li>
+              <li>Mahasiswa — Offline <span>Rp200.000</span></li>
+              <li>Umum — Online <span>Rp225.000</span></li>
+              <li>Umum — Offline <span>Rp250.000</span></li>
+              <li class="extra">Ekstra paper (per orang) <span>+Rp50.000</span></li>
+            </ul>
             <a class="t-big" data-link="pemakalah">
               <strong>Daftar Pemakalah ↗</strong>
-              <span>Mulai Rp175.000 · kirim abstrak s.d. 20 Jan 2027</span>
+              <span>Satu formulir · kirim abstrak s.d. 20 Jan 2027</span>
             </a>
-            <p class="t-extra">Ekstra paper +Rp50.000/orang</p>
             <span class="notch-bottom" aria-hidden="true"></span>
           </div>
         </div>
         <p class="register-note">
-          Harga ungu adalah early bird (s.d. 24 Des 2025). Semua formulir
+          Harga utama adalah early bird, harga dicoret adalah reguler. Tarif
+          pemakalah tidak dibedakan early bird / reguler. Semua formulir
           dibuka di tab baru.
         </p>
       </div>
