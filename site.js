@@ -4,9 +4,9 @@ const TAUTAN = {
   alurPemakalah:
     "https://docs.google.com/document/d/1Uq41bFn4YhzlN6PFqAjHJjEZRefPPPvq/edit?usp=sharing",
   templateAbstrak:
-    "https://docs.google.com/document/d/1dthBVUjt_nSQmdQCw1oCj_ejJ93qCnOD/edit?usp=sharing",
+    "https://docs.google.com/document/d/1ZtktfQ16MJC9V0vKgXqg-qrWsCIbAbjN/edit",
   templateFullPaper:
-    "https://docs.google.com/document/d/1p5WcawSXUmEGLCMRab2_Y_NTqbimYwrU/edit?usp=sharing",
+    "https://docs.google.com/document/d/1QEKdhRnWDKhMcoD9xbe_IrKAQkYVWt-A/edit?usp=sharing&ouid=109493120214545176707&rtpof=true&sd=true",
   // formulir konfirmasi pendaftaran PEMAKALAH (bukan peserta)
   konfirmasiPendaftaran:
     "https://docs.google.com/forms/d/e/1FAIpQLSemeMw--Y9-PPF19b9Nwmm8kD8Sau7e43DN6c7j3PsSkv0FwQ/viewform",
