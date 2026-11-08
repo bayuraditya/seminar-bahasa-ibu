@@ -1058,3 +1058,48 @@ footer {
     font-size: 0.9rem;
   }
 }
+
+/* ---------- Panel konfirmasi setelah lulus (pemakalah) ---------- */
+.lulus-card {
+  background: var(--surface);
+  border: 1.5px solid var(--ink);
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 6px 6px 0 var(--accent-bright);
+}
+
+.lulus-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.lulus-steps li {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.92rem;
+}
+
+.lulus-steps strong {
+  display: block;
+  color: var(--ochre);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.lulus-steps span {
+  color: var(--muted);
+}
+
+@media (max-width: 520px) {
+  .lulus-card {
+    padding: 20px 16px;
+  }
+}
