@@ -285,6 +285,23 @@
         font-size: 0.94rem;
       }
 
+      .price-table th {
+        padding: 0 0 8px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .price-table th:not(:first-child) {
+        text-align: right;
+      }
+
+      .price-table th.eb {
+        color: var(--accent);
+      }
+
       .price-table td:not(:first-child) {
         text-align: right;
         font-variant-numeric: tabular-nums;
@@ -840,6 +857,13 @@
           <div class="price-card">
             <h3>Peserta</h3>
             <table class="price-table">
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Reguler</th>
+                  <th scope="col" class="eb">Early bird</th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
                   <td>Mahasiswa — Online</td>
@@ -867,6 +891,12 @@
           <div class="price-card">
             <h3>Pemakalah</h3>
             <table class="price-table">
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Tarif</th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
                   <td>Pemakalah Mahasiswa — Online</td>
@@ -893,7 +923,7 @@
           </div>
         </div>
         <p class="fee-note">
-          Kolom ungu pada tabel peserta adalah harga early bird. Semua rincian
+          Tarif pemakalah tidak dibedakan early bird / reguler. Semua rincian
           biaya adalah biaya per orang.
         </p>
       </div>
