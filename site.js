@@ -1,5 +1,6 @@
 const TAUTAN = {
-  pemakalah: "https://bit.ly/PendaftaranPemakalahSNBI2027",
+  pemakalah:
+    "https://docs.google.com/forms/d/e/1FAIpQLSdh5D51ZGNplLeP884wFwNJG9or434QeOu3zZvg4_lqJjh-pw/viewform",
   alurPemakalah:
     "https://docs.google.com/document/d/1Uq41bFn4YhzlN6PFqAjHJjEZRefPPPvq/edit?usp=sharing",
   templateAbstrak:
