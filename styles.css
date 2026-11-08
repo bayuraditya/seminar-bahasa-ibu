@@ -201,66 +201,97 @@ section[id] {
   color: var(--ochre);
 }
 
-/* strip jadwal ala data koran: garis tebal di atas, kolom berpembatas
-   tipis, tanggal pelaksanaan ditonjolkan */
+/* strip jadwal ala tiket: pita gelap berisi tanggal pelaksanaan,
+   lalu daftar tenggat dengan titik-titik penuntun (leader dots) */
 .dates {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1.15fr 1fr 1fr;
-  margin-top: 36px;
-  padding-top: 14px;
-  border-top: 2.5px solid var(--ink);
+  margin-top: 34px;
 }
 
-.dates div {
-  padding: 2px 16px 0;
-  border-left: 1px solid var(--line);
-  min-width: 0;
+.dates-when {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 14px;
+  background: var(--ink);
+  padding: 11px 17px;
+  border: 1.5px solid var(--ink);
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
 }
 
-.dates div:first-child {
-  border-left: 0;
-  padding-left: 0;
+.dates-when span {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+}
+
+.dates-when strong {
+  color: var(--accent-bright);
+  font-size: 1.02rem;
+  font-weight: 700;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.dates dl {
+  background: var(--surface);
+  border: 1.5px solid var(--ink);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  padding: 6px 18px;
+}
+
+.dates dl > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 9px 0;
+}
+
+.dates dl > div + div {
+  border-top: 1px solid var(--line);
 }
 
 .dates dt {
   color: var(--ochre);
   font-weight: 700;
-  font-size: 0.7rem;
-  text-transform: uppercase;
+  font-size: 0.72rem;
   letter-spacing: 0.1em;
-  margin-bottom: 3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* titik-titik penuntun antara label dan tanggal */
+.dates .dots {
+  flex: 1;
+  min-width: 18px;
+  border-bottom: 2px dotted #d8c27a;
+  transform: translateY(-3px);
 }
 
 .dates dd {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.92rem;
-  line-height: 1.35;
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
-/* tanggal pelaksanaan ditonjolkan */
-.dates div:first-child dd {
-  font-size: 1.08rem;
-  font-weight: 700;
-}
-
-/* layar sempit: lepas garis kolom, jadi grid dua kolom */
-@media (max-width: 880px) {
-  .dates {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 24px;
+/* layar sempit: label dan tanggal turun ke dua baris,
+   titik-titik penuntun disembunyikan */
+@media (max-width: 500px) {
+  .dates dl > div {
+    flex-wrap: wrap;
+    gap: 3px 10px;
   }
 
-  .dates div {
-    border-left: 0;
-    padding: 0;
+  .dates .dots {
+    display: none;
   }
-}
 
-@media (max-width: 400px) {
-  .dates {
-    grid-template-columns: 1fr;
-    gap: 14px;
+  .dates dd {
+    margin-left: auto;
   }
 }
 
