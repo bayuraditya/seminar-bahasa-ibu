@@ -431,6 +431,51 @@
         font-size: 1.05rem;
       }
 
+      .bank-logo {
+        display: block;
+        height: 34px;
+        width: auto;
+        margin-top: 4px;
+      }
+
+      .copy-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .copy-line .acc {
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.03em;
+      }
+
+      .btn-copy {
+        font: inherit;
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        border: 1.5px solid var(--line);
+        background: var(--bg);
+        color: var(--muted);
+        border-radius: 999px;
+        padding: 4px 13px;
+        cursor: pointer;
+        transition: border-color 0.15s, color 0.15s, background 0.15s;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .btn-copy:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn-copy.copied {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
+
       /* ---------- Daftar: tiket ---------- */
       .ticket {
         position: relative;
@@ -773,6 +818,32 @@
             el.setAttribute("rel", "noopener");
           }
         });
+
+        // tombol salin (nomor rekening)
+        document.querySelectorAll("[data-copy]").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const teks = btn.getAttribute("data-copy");
+            try {
+              await navigator.clipboard.writeText(teks);
+            } catch {
+              const ta = document.createElement("textarea");
+              ta.value = teks;
+              ta.style.position = "fixed";
+              ta.style.opacity = "0";
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand("copy");
+              ta.remove();
+            }
+            const asli = btn.textContent;
+            btn.textContent = "✓ Tersalin";
+            btn.classList.add("copied");
+            setTimeout(() => {
+              btn.textContent = asli;
+              btn.classList.remove("copied");
+            }, 1800);
+          });
+        });
       });
     </script>
 
@@ -1019,11 +1090,28 @@
         <dl class="pay-card">
           <div>
             <dt>Bank</dt>
-            <dd>BNI</dd>
+            <dd>
+              <img
+                class="bank-logo"
+                src="logo-bni.png"
+                alt="Logo Bank BNI"
+                height="34"
+              />
+            </dd>
           </div>
           <div>
             <dt>Nomor rekening</dt>
-            <dd>1975558913</dd>
+            <dd class="copy-line">
+              <span class="acc">1975558913</span>
+              <button
+                class="btn-copy"
+                type="button"
+                data-copy="1975558913"
+                aria-label="Salin nomor rekening"
+              >
+                Salin
+              </button>
+            </dd>
           </div>
           <div>
             <dt>Atas nama</dt>
