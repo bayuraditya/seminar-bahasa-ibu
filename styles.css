@@ -1003,3 +1003,36 @@ footer {
     max-width: 420px;
   }
 }
+
+/* ---------- Responsif: baris tiket di layar kecil ----------
+   Nama kategori + panah di baris pertama, harga early bird &
+   reguler berdampingan di baris kedua agar tidak sesak. */
+@media (max-width: 520px) {
+  .wrap {
+    padding: 0 18px;
+  }
+
+  .stub {
+    padding: 20px 16px 18px;
+  }
+
+  .t-row {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding: 13px 14px;
+  }
+
+  .t-row strong {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .t-row .t-price {
+    flex-basis: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 16px;
+    text-align: left;
+    font-size: 0.98rem;
+  }
+}
