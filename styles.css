@@ -201,42 +201,67 @@ section[id] {
   color: var(--ochre);
 }
 
-/* baris tanggal: item sejajar, dipisah titik tengah */
+/* strip jadwal ala data koran: garis tebal di atas, kolom berpembatas
+   tipis, tanggal pelaksanaan ditonjolkan */
 .dates {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  margin-top: 34px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.15fr 1fr 1fr;
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 2.5px solid var(--ink);
 }
 
 .dates div {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  white-space: nowrap;
+  padding: 2px 16px 0;
+  border-left: 1px solid var(--line);
+  min-width: 0;
 }
 
-.dates div + div::before {
-  content: "·";
-  margin: 0 14px;
-  color: var(--ochre);
-  font-weight: 700;
+.dates div:first-child {
+  border-left: 0;
+  padding-left: 0;
 }
 
 .dates dt {
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 0.76rem;
+  color: var(--ochre);
+  font-weight: 700;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.1em;
+  margin-bottom: 3px;
 }
 
 .dates dd {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
   font-variant-numeric: tabular-nums;
+}
+
+/* tanggal pelaksanaan ditonjolkan */
+.dates div:first-child dd {
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+/* layar sempit: lepas garis kolom, jadi grid dua kolom */
+@media (max-width: 880px) {
+  .dates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 24px;
+  }
+
+  .dates div {
+    border-left: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .dates {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 
 /* ---------- Subtema ---------- */
