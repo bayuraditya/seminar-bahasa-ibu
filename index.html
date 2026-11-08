@@ -451,17 +451,19 @@
       }
 
       .btn-copy {
-        font: inherit;
-        font-size: 0.74rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
         border: 1.5px solid var(--line);
         background: var(--bg);
         color: var(--muted);
-        border-radius: 999px;
-        padding: 4px 13px;
+        border-radius: 50%;
+        padding: 0;
         cursor: pointer;
-        transition: border-color 0.15s, color 0.15s, background 0.15s;
+        transition: border-color 0.15s, color 0.15s, background 0.15s,
+          transform 0.16s ease;
         -webkit-tap-highlight-color: transparent;
       }
 
@@ -470,10 +472,26 @@
         color: var(--accent);
       }
 
+      .btn-copy:active {
+        transform: scale(0.92);
+      }
+
+      .btn-copy .ic-check {
+        display: none;
+      }
+
       .btn-copy.copied {
         border-color: var(--accent);
         color: var(--accent);
         background: var(--accent-soft);
+      }
+
+      .btn-copy.copied .ic-copy {
+        display: none;
+      }
+
+      .btn-copy.copied .ic-check {
+        display: block;
       }
 
       /* ---------- Daftar: tiket ---------- */
@@ -835,12 +853,11 @@
               document.execCommand("copy");
               ta.remove();
             }
-            const asli = btn.textContent;
-            btn.textContent = "✓ Tersalin";
             btn.classList.add("copied");
+            btn.setAttribute("aria-label", "Nomor rekening tersalin");
             setTimeout(() => {
-              btn.textContent = asli;
               btn.classList.remove("copied");
+              btn.setAttribute("aria-label", "Salin nomor rekening");
             }, 1800);
           });
         });
@@ -1108,8 +1125,37 @@
                 type="button"
                 data-copy="1975558913"
                 aria-label="Salin nomor rekening"
+                title="Salin nomor rekening"
               >
-                Salin
+                <svg
+                  class="ic-copy"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="9" y="9" width="12" height="12" rx="2.5" />
+                  <path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5" />
+                </svg>
+                <svg
+                  class="ic-check"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4.5 12.5l5 5 10-11" />
+                </svg>
               </button>
             </dd>
           </div>
