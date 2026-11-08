@@ -16,8 +16,8 @@ const TAUTAN = {
     "https://docs.google.com/forms/d/e/1FAIpQLSfq7Iq4owns3OVpPBFu6idzZSm8aesS06yasnlaumbKbXHr2Q/viewform",
   pesertaMahasiswaOnline:
     "https://docs.google.com/forms/d/e/1FAIpQLSc2kmq8W09xGD1ZDGnUz2B-kip4lGKTZ3IvOWJXFssw_c7i_w/viewform",
-  // TODO: ganti dengan link form khusus mahasiswa offline saat tersedia
-  pesertaMahasiswaOffline: "https://bit.ly/PendaftaranPesertaSNBI2027",
+  pesertaMahasiswaOffline:
+    "https://docs.google.com/forms/d/e/1FAIpQLSeo8TayzcmIbaHEHUanDYYoXCjtKgNHhgRr3MLGG07f5S8gpw/viewform",
   wa: "http://wa.me/6285162533947",
   waRena: "https://wa.me/6285739003050",
   waDewi: "https://wa.me/6285162533947",
