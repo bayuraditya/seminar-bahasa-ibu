@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Seminar Nasional Bahasa Ibu (SNBI) XIX 2027 — Pendaftaran peserta & pemakalah."
+      content="Seminar Nasional Bahasa Ibu (SNBI) XIX 2027 — Jumat, 19 Februari 2027, Universitas Udayana. Pendaftaran peserta & pemakalah."
     />
     <title>SNBI XIX 2027 — Seminar Nasional Bahasa Ibu</title>
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -734,17 +734,70 @@
         }
       }
 
+      /* ---------- Narasumber ---------- */
+      .speakers {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 14px;
+      }
+
+      .speakers li {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+
+      .speakers .avatar {
+        flex: none;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--accent-bright);
+        color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+      }
+
+      .speakers strong {
+        font-size: 0.98rem;
+        line-height: 1.35;
+      }
+
       /* ---------- Kontak ---------- */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 14px;
+      }
+
       .contact-card {
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 14px;
         padding: 22px;
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .contact-card .role {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ochre);
+        margin-bottom: 4px;
       }
 
       .contact-card .who strong {
@@ -753,7 +806,7 @@
         font-weight: 700;
       }
 
-      .contact-card .who span {
+      .contact-card .who span:not(.role) {
         color: var(--muted);
         font-size: 0.95rem;
         font-variant-numeric: tabular-nums;
@@ -853,6 +906,8 @@
         pesertaMahasiswaOffline: "https://bit.ly/PendaftaranPesertaSNBI2027",
         wa: "http://wa.me/6285162533947",
         waRena: "https://wa.me/6285739003050",
+        waDewi: "https://wa.me/6285162533947",
+        waWahyuni: "https://wa.me/6287865027154",
         email: "mailto:snbi@unud.ac.id",
       };
 
@@ -901,6 +956,7 @@
         </a>
         <ul class="nav-links">
           <li class="hide-mobile"><a href="#subtema">Subtema</a></li>
+          <li class="hide-mobile"><a href="#narasumber">Narasumber</a></li>
           <li class="hide-mobile"><a href="#alur">Alur</a></li>
           <li><a class="nav-cta" href="#daftar">Daftar</a></li>
         </ul>
@@ -909,10 +965,13 @@
 
     <header class="hero">
       <div class="wrap">
+        <span class="badge"
+          >SNBI XIX · Prodi Linguistik Magister, FIB Universitas Udayana</span
+        >
         <h1>Seminar Nasional Bahasa Ibu</h1>
         <p class="hero-sub">
-          Bahasa Ibu sebagai Pilar Identitas Budaya: Tantangan dan Peluang di
-          Era Modernisasi Digital
+          Bahasa Ibu dan Multibahasa di Era Global: Peran, Tantangan dan
+          Inovasi dalam Pembelajaran Bahasa
         </p>
         <p>
           Pendaftaran terbuka untuk peserta dan pemakalah — mahasiswa maupun
@@ -924,21 +983,28 @@
           <a class="btn btn-ghost" data-link="pemakalah">Daftar Pemakalah ↗</a>
         </div>
         <dl class="dates">
+          <!-- TODO: periode early bird perlu diverifikasi ke panitia
+               (poster baru tidak mencantumkannya; sementara mengikuti
+               pola tahunan 23 Nov – 24 Des) -->
+          <div>
+            <dt>Pelaksanaan</dt>
+            <dd>Jumat, 19 Feb 2027 · 08.30 WITA</dd>
+          </div>
           <div>
             <dt>Early bird</dt>
-            <dd>24 Nov – 24 Des 2025</dd>
+            <dd>23 Nov – 24 Des 2026</dd>
           </div>
           <div>
             <dt>Kirim abstrak</dt>
-            <dd>s.d. 20 Jan 2027</dd>
+            <dd>23 Nov 2026 – 14 Jan 2027</dd>
           </div>
           <div>
             <dt>Pengumuman abstrak</dt>
-            <dd>30 Jan 2027</dd>
+            <dd>27 Jan 2027</dd>
           </div>
           <div>
             <dt>Full paper</dt>
-            <dd>31 Jan – 15 Feb 2027</dd>
+            <dd>26 Jan – 10 Feb 2027</dd>
           </div>
         </dl>
       </div>
@@ -962,6 +1028,55 @@
       </div>
     </section>
 
+    <section class="section" id="narasumber">
+      <div class="wrap">
+        <h2>Narasumber</h2>
+        <p class="section-intro">
+          Tiga keynote speaker akan mengisi Seminar Nasional Bahasa Ibu XIX.
+        </p>
+        <!-- TODO: afilliasi universitas tiap narasumber menunggu data
+             panitia -->
+        <ul class="speakers">
+          <li>
+            <span class="avatar" aria-hidden="true">MN</span>
+            <div>
+              <strong>Prof. Madalena Ngogo</strong>
+            </div>
+          </li>
+          <li>
+            <span class="avatar" aria-hidden="true">NK</span>
+            <div>
+              <strong>Prof. Dr. I Nyoman Kardana</strong>
+            </div>
+          </li>
+          <li>
+            <span class="avatar" aria-hidden="true">PK</span>
+            <div>
+              <strong>Dr. Ni Luh Putu Krisnawati, S.S., M.Hum</strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="fasilitas">
+      <div class="wrap">
+        <h2>Fasilitas</h2>
+        <p class="section-intro">
+          Yang didapatkan peserta dan pemakalah SNBI XIX.
+        </p>
+        <div class="chips">
+          <span class="chip">E-Sertifikat</span>
+          <span class="chip">E-Prosiding</span>
+          <span class="chip">Seminar Kit (peserta &amp; pemakalah offline)</span>
+          <span class="chip"
+            >Artikel terpilih direkomendasikan ke jurnal terakreditasi
+            Sinta</span
+          >
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="alur">
       <div class="wrap">
         <h2>Alur Pendaftaran</h2>
@@ -972,7 +1087,7 @@
         <ol class="steps">
           <li>
             <div>
-              <time>24 Nov 2025 – 20 Jan 2027</time>
+              <time>23 Nov 2026 – 14 Jan 2027</time>
               <strong>Kirim abstrak</strong>
               <p>
                 Gunakan template abstrak, sesuai tema &amp; subtema SNBI
@@ -982,7 +1097,7 @@
           </li>
           <li>
             <div>
-              <time>30 Januari 2027</time>
+              <time>27 Januari 2027</time>
               <strong>Pengumuman kelulusan abstrak</strong>
               <p>Hasil ulasan dikirim ke email pendaftar.</p>
             </div>
@@ -999,7 +1114,7 @@
           </li>
           <li>
             <div>
-              <time>31 Jan – 15 Feb 2027</time>
+              <time>26 Jan – 10 Feb 2027</time>
               <strong>Kirim full paper</strong>
               <p>Gunakan template full paper yang tersedia.</p>
             </div>
@@ -1117,7 +1232,7 @@
         <h2>Biaya &amp; Pendaftaran</h2>
         <p class="section-intro">
           Pilih kategori lalu isi formulirnya. Harga early bird berlaku
-          24 November – 24 Desember 2025; semua biaya dihitung per orang.
+          23 November – 24 Desember 2026; semua biaya dihitung per orang.
         </p>
         <div class="ticket">
           <div class="stub">
@@ -1166,7 +1281,7 @@
             </ul>
             <a class="t-big" data-link="pemakalah">
               <strong>Daftar Pemakalah ↗</strong>
-              <span>Satu formulir · kirim abstrak s.d. 20 Jan 2027</span>
+              <span>Satu formulir · kirim abstrak s.d. 14 Jan 2027</span>
             </a>
             <span class="notch-bottom" aria-hidden="true"></span>
           </div>
@@ -1186,24 +1301,56 @@
           Ada pertanyaan seputar pendaftaran atau seminar? Hubungi kami
           langsung lewat WhatsApp.
         </p>
-        <div class="contact-card">
-          <div class="who">
-            <strong>Rena Wahyu</strong>
-            <span>+62 857-3900-3050</span>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Pendaftaran</span>
+              <strong>Rena Wahyu</strong>
+              <span>+62 857-3900-3050</span>
+            </div>
+            <a class="btn-wa" data-link="waRena" aria-label="Chat WhatsApp Rena Wahyu (Pendaftaran)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
           </div>
-          <a class="btn-wa" data-link="waRena" aria-label="Chat WhatsApp Rena Wahyu">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
-            </svg>
-            Chat WhatsApp
-          </a>
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Pembayaran</span>
+              <strong>Dewi Agustini</strong>
+              <span>+62 851-6253-3947</span>
+            </div>
+            <a class="btn-wa" data-link="waDewi" aria-label="Chat WhatsApp Dewi Agustini (Pembayaran)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Informasi Umum</span>
+              <strong>Wahyuni Aryanti</strong>
+              <span>+62 878-6502-7154</span>
+            </div>
+            <a class="btn-wa" data-link="waWahyuni" aria-label="Chat WhatsApp Wahyuni Aryanti (Informasi Umum)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="wrap footer-inner">
-        <span>&copy; 2027 Seminar Nasional Bahasa Ibu (SNBI) XIX</span>
+        <span
+          >&copy; 2027 SNBI XIX · Prodi Linguistik Magister, FIB Universitas
+          Udayana</span
+        >
         <span>
           <a data-link="email">snbi@unud.ac.id</a> &nbsp;·&nbsp;
           <a data-link="wa">WhatsApp</a>
