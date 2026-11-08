@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pendaftaran peserta SNBI XIX 2027 — mahasiswa & umum, online & offline. Harga early bird dan formulir pendaftaran."
+    />
+    <title>Pendaftaran Peserta — SNBI XIX 2027</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <img src="favicon.png" alt="Lambang Universitas Udayana" />
+          SNBI XIX 2027
+        </a>
+        <ul class="nav-links">
+          <li class="hide-mobile"><a href="index.html#subtema">Subtema</a></li>
+          <li class="hide-mobile"><a href="index.html#narasumber">Narasumber</a></li>
+          <li class="hide-mobile"><a href="pemakalah.html#alur">Alur</a></li>
+          <li><a class="nav-cta" href="peserta.html" aria-current="page">Peserta</a></li>
+          <li><a class="nav-cta" href="pemakalah.html">Pemakalah</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="crumbs"><a href="index.html">Beranda</a> / Pendaftaran Peserta</p>
+        <h1>Pendaftaran Peserta</h1>
+        <p>
+          Pilih kategori lalu isi formulirnya. Harga early bird berlaku
+          23 November – 24 Desember 2026. Semua biaya dihitung per orang.
+        </p>
+      </div>
+    </header>
+
+    <section class="section" id="daftar">
+      <div class="wrap">
+        <div class="ticket single">
+          <div class="stub">
+            <span class="tag">Formulir Peserta</span>
+            <a class="t-row" data-link="pesertaMahasiswaOnline">
+              <strong>Mahasiswa — Online</strong>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp50.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp70.000</s></span>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaMahasiswaOffline">
+              <strong>Mahasiswa — Offline</strong>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp75.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp95.000</s></span>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaUmumOnline">
+              <strong>Umum — Online</strong>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp150.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp175.000</s></span>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+            <a class="t-row" data-link="pesertaUmumOffline">
+              <strong>Umum — Offline</strong>
+              <span class="t-price">
+                <span class="t-eb"><span class="p-label">Early bird</span>Rp175.000</span>
+                <span class="t-reg"><span class="p-label">Reguler</span><s>Rp200.000</s></span>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+        <p class="register-note">
+          Harga early bird berlaku 23 November – 24 Desember 2026. Semua
+          formulir dibuka di tab baru.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="pembayaran">
+      <div class="wrap">
+        <h2>Rekening Pembayaran</h2>
+        <p class="section-intro">
+          Setelah mengisi formulir, lakukan pembayaran ke rekening berikut
+          lalu isi formulir konfirmasi pembayaran.
+        </p>
+        <dl class="pay-card">
+          <div>
+            <dt>Bank</dt>
+            <dd>
+              <img
+                class="bank-logo"
+                src="logo-bni.png"
+                alt="Logo Bank BNI"
+                height="34"
+              />
+            </dd>
+          </div>
+          <div>
+            <dt>Nomor rekening</dt>
+            <dd class="copy-line">
+              <span class="acc">1975558913</span>
+              <button
+                class="btn-copy"
+                type="button"
+                data-copy="1975558913"
+                aria-label="Salin nomor rekening"
+                title="Salin nomor rekening"
+              >
+                <svg
+                  class="ic-copy"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="9" y="9" width="12" height="12" rx="2.5" />
+                  <path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5" />
+                </svg>
+                <svg
+                  class="ic-check"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4.5 12.5l5 5 10-11" />
+                </svg>
+              </button>
+            </dd>
+          </div>
+          <div>
+            <dt>Atas nama</dt>
+            <dd>Ni Putu Ayu Devi Agustini</dd>
+          </div>
+        </dl>
+        <ul class="doc-list after-pay">
+          <li>
+            <a data-link="konfirmasiPembayaran">
+              <span><span class="tag">Google Form</span><strong>Formulir Konfirmasi Pembayaran</strong></span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="kontak">
+      <div class="wrap">
+        <h2>Contact Person</h2>
+        <p class="section-intro">
+          Ada pertanyaan seputar pendaftaran atau seminar? Hubungi kami
+          langsung lewat WhatsApp.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Pendaftaran</span>
+              <strong>Rena Wahyu</strong>
+              <span>+62 857-3900-3050</span>
+            </div>
+            <a class="btn-wa" data-link="waRena" aria-label="Chat WhatsApp Rena Wahyu (Pendaftaran)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Pembayaran</span>
+              <strong>Devi Agustini</strong>
+              <span>+62 851-6253-3947</span>
+            </div>
+            <a class="btn-wa" data-link="waDewi" aria-label="Chat WhatsApp Devi Agustini (Pembayaran)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="who">
+              <span class="role">Informasi Umum</span>
+              <strong>Wahyuni Aryanti</strong>
+              <span>+62 878-6502-7154</span>
+            </div>
+            <a class="btn-wa" data-link="waWahyuni" aria-label="Chat WhatsApp Wahyuni Aryanti (Informasi Umum)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2Zm0 18.02c-1.48 0-2.94-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.06 8.06 0 0 1-1.24-4.26c0-4.47 3.64-8.1 8.12-8.1 4.47 0 8.1 3.63 8.1 8.1 0 4.48-3.63 8.12-8.1 8.12Zm4.46-6.08c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.11-.5.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.47-.4-.41-.55-.41h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28Z"/>
+              </svg>
+              Chat WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <p class="logo-label">Penyelenggara &amp; Mitra</p>
+        <div class="logo-row">
+          <img src="logo_unud.png" alt="Logo Universitas Udayana" />
+          <img
+            src="logo-kemendikdasmen.png"
+            alt="Logo Kementerian Pendidikan Dasar dan Menengah"
+          />
+          <img
+            src="logo-apbl.png"
+            alt="Logo Asosiasi Peneliti Bahasa Lokal"
+          />
+          <img
+            src="logo-berdampak.png"
+            alt="Logo Diktisaintek Berdampak"
+          />
+        </div>
+        <div class="footer-inner">
+          <span
+            >&copy; 2027 SNBI XIX · Prodi Linguistik Magister, FIB Universitas
+            Udayana</span
+          >
+          <span>
+            <a data-link="email">snbi@unud.ac.id</a> &nbsp;·&nbsp;
+            <a data-link="wa">WhatsApp</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
