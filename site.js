@@ -2,7 +2,7 @@ const TAUTAN = {
   pemakalah:
     "https://docs.google.com/forms/d/e/1FAIpQLSdh5D51ZGNplLeP884wFwNJG9or434QeOu3zZvg4_lqJjh-pw/viewform",
   alurPemakalah:
-    "https://drive.google.com/file/d/1WuMt1tBtx5sYtgUcVTgWqxKdqeMV0Opl/view?usp=sharing",
+    "https://docs.google.com/document/d/189tSdXnrdocwgCb1U88gkH7uftedbGSz/edit?usp=sharing",
   templateAbstrak:
     "https://docs.google.com/document/d/1uTXV1VETdYRFLxo_jwzUqb4anRgRojjE/edit?usp=sharing",
   templateFullPaper:
