@@ -2,11 +2,11 @@ const TAUTAN = {
   pemakalah:
     "https://docs.google.com/forms/d/e/1FAIpQLSdh5D51ZGNplLeP884wFwNJG9or434QeOu3zZvg4_lqJjh-pw/viewform",
   alurPemakalah:
-    "https://docs.google.com/document/d/1Uq41bFn4YhzlN6PFqAjHJjEZRefPPPvq/edit?usp=sharing",
+    "https://drive.google.com/file/d/1WuMt1tBtx5sYtgUcVTgWqxKdqeMV0Opl/view?usp=sharing",
   templateAbstrak:
-    "https://docs.google.com/document/d/1ZtktfQ16MJC9V0vKgXqg-qrWsCIbAbjN/edit",
+    "https://docs.google.com/document/d/1uTXV1VETdYRFLxo_jwzUqb4anRgRojjE/edit?usp=sharing",
   templateFullPaper:
-    "https://docs.google.com/document/d/1QEKdhRnWDKhMcoD9xbe_IrKAQkYVWt-A/edit?usp=sharing&ouid=109493120214545176707&rtpof=true&sd=true",
+    "https://docs.google.com/document/d/1yn9C-i8G-dUqYmAX6J3UwwiOwpkm-QsH/edit?usp=sharing",
   // formulir konfirmasi pendaftaran PEMAKALAH (bukan peserta)
   konfirmasiPendaftaran:
     "https://docs.google.com/forms/d/e/1FAIpQLSemeMw--Y9-PPF19b9Nwmm8kD8Sau7e43DN6c7j3PsSkv0FwQ/viewform",
